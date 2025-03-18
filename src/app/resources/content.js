@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Graphic designer",
+  role: "Diseñador Gráfico Senior",
   avatar: "/images/avatar.jpg",
   location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
