@@ -113,17 +113,6 @@ export const Header = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
-            paddingRight="12"
-            horizontal="end"
-            vertical="center"
-            textVariant="body-default-s"
-            gap="20"
-          >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
-          </Flex>
-        </Flex>
       </Flex>
     </>
   );
