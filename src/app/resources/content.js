@@ -8,7 +8,7 @@ const person = {
   },
   role: "Graphic designer",
   avatar: "/images/avatar.jpg",
-  location: "America/Ecuador", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
 };
 
