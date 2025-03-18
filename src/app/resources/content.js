@@ -56,7 +56,8 @@ const home = {
   subline: (
     <>
       Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding,
-      <br />contenido para redes de multimarcas y desarrollo de key visuals (KVs),
+      <br />contenido para redes de multimarcas y desarrollo de key visuals KVs para redes sociales,
+      <br />con habilidades en diseño de interfaces y experiencia de usuario UX/UI,
       <br />combinando creatividad y estrategia para generar impacto visual.
     </>
   ),
