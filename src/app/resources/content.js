@@ -8,7 +8,7 @@ const person = {
   },
   role: "Graphic designer",
   avatar: "/images/avatar.jpg",
-  location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -27,9 +27,9 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    name: "Behance",
+    icon: "behance",
+    link: "https://www.behance.net/hugo97max",
   },
   {
     name: "LinkedIn",
