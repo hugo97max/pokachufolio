@@ -6,14 +6,14 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Diseñador Gráfico Senior",
+  role: "Diseñador Gráfico Senior | Diseñador Web UX/UI",
   avatar: "/images/avatar.jpg",
   location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -37,11 +37,6 @@ const social = [
     link: "https://www.linkedin.com/in/hugo97max/",
   },
   {
-    name: "X",
-    icon: "x",
-    link: "",
-  },
-  {
     name: "Email",
     icon: "email",
     link: "mailto:hugo97max@gmail.com",
@@ -50,22 +45,19 @@ const social = [
 
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  title: `${person.name} - Portafolio`,
+  description: `Conoce más sobre mis proyectos.`,
+  headline: <>Diseñador Gráfico Senior</>,
   subline: (
     <>
-      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding,
-      contenido para redes de multimarcas y desarrollo de key visuals KVs para redes sociales,
-      con habilidades en diseño de interfaces y experiencia de usuario UX/UI,
-      combinando creatividad y estrategia para generar impacto visual.
+      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals KVs para redes sociales, con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para generar impacto visual.
     </>
   ),
 };
 
 const about = {
-  label: "About",
-  title: "About me",
+  label: "Conóceme",
+  title: "Conoce más de mi",
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
@@ -75,7 +67,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -83,52 +75,74 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Soy un diseñador creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experiencia laboral",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Quantumbit QBIT",
+        timeframe: "Jul 2024 - Actualidad",
+        role: "Diseñador Gráfico Senior, Diseñador web UX/UI",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Como diseñador gráfico senior, he desarrollado identidades visuales y materiales gráficos impactantes para diversas marcas, trabajando en la producción de contenido digital, key visuals y campañas para empresas como Marriott, Proquim, Intaco, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner, Mall del Norte, Bristol Place y AustroRed.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Además, tengo experiencia en la creación y optimización de campañas publicitarias en Meta y Google, con un enfoque en maximizar el rendimiento y la conversión mediante estrategias creativas y una segmentación efectiva.
+          </>,
+          <>
+            Tengo experiencia como diseñador web UX/UI, creando interfaces intuitivas y atractivas centradas en el usuario. Mi enfoque ha sido optimizar la usabilidad y la interacción en sitios web y aplicaciones, trabajando de cerca con equipos de desarrollo para asegurar que los diseños sean estéticamente agradables y técnicamente viables.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Grupo Ronquillo Sandoya",
+        timeframe: "Jul 2021 - Abr 2024",
+        role: "Diseñador Gráfico Senior, Diseñador Web, CM y Fotógrafo",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Me especializo en la creación de material digital para redes sociales y campañas publicitarias, desarrollando piezas visuales impactantes que comunican efectivamente el mensaje de cada marca. Además, cuento con experiencia en producción audiovisual y spots publicitarios, asegurando un contenido dinámico y de alta calidad.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            También he trabajado en el rebranding de marcas y el desarrollo de identidades corporativas sólidas, alineadas con su esencia y valores. Gestiono estrategias de marketing digital, diseño y desarrollo páginas web, y tengo habilidades en fotografía y edición profesional para potenciar la imagen visual de cada proyecto.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "IVMA Importer",
+        timeframe: "Feb 2023 - Ago 2023",
+        role: "Diseñador Gráfico Senior, CM y Fotógrafo",
+        achievements: [
+          <>
+            Trabajé en la creación de contenido digital y rediseño de marca, desarrollando material gráfico para publicidad y redes sociales. Además, diseñé y mantuve una página web eCommerce, y realicé producción fotográfica y edición.
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "FCS Ecuador",
+        timeframe: "Jul 2021 - Feb 2024",
+        role: "Diseñador Gráfico Senior y CM",
+        achievements: [
+          <>
+            Trabajé en el diseño de branding, páginas web e identidad visual para Kerd, Etika y Regalart, subempresas de FCS Ecuador. Me encargué de crear materiales visuales para redes sociales y estrategias de marca, además de desarrollar e implementar rebranding para cada empresa. También gestioné comunidades digitales como Community Manager y diseñé artes pop para campañas visuales, fortaleciendo la identidad visual y la comunicación de las marcas tanto en entornos digitales como físicos.
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "Ecuador Video | Farandula Ecuatoriana",
+        timeframe: "Ene 2020 - Jul 2021",
+        role: "Diseñador Gráfico Senior y periodista",
+        achievements: [
+          <>
+            Fui responsable de la creación de contenido digital para redes sociales y plataformas multimedia de noticias políticas, asegurando una comunicación efectiva y atractiva. Realicé investigaciones periodísticas para generar contenido informativo, produje y edité material audiovisual, gestioné redes sociales como Community Manager.
           </>,
         ],
         images: [],
@@ -137,53 +151,41 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Formación académica",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Instituto Superior Tecnológico Babahoyo",
+        description: <>2017 - 2020 | Tecnología Superior en Diseño Gráfico Publicitario.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Unidad Educativa Teodoro Kelly",
+        description: <>2011 - 2015 | Técnico de Servicios en Aplicaciones Informáticas.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Suite Adobe",
+        description: <>Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, Adobe After Effects, Adobe Indesign.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Figma",
+        description: <>Tengo experiencia en Figma como diseñador UI/UX, creando interfaces de usuario, prototipos interactivos y colaborando eficientemente con equipos de desarrollo, asegurando la fluidez en el proceso de diseño y la optimización de proyectos web y móviles.
+        </>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
+      },
+      {
+        title: "WordPress, Elementor",
+        description: <>Llevo años trabajando como diseñador y programador de páginas web en el entorno de WordPress. Actualmente, me especializo en la creación de sitios con Elementor, debido a la rapidez en la ejecución de proyectos y la facilidad de uso que ofrece a los clientes para la manipulación y actualización de sus páginas de manera autónoma.
+        </>,
+        // optional: leave the array empty if you don't want to display images
+        images: [],
       },
     ],
   },
@@ -198,88 +200,23 @@ const blog = {
 };
 
 const work = {
-  label: "Work",
-  title: "My projects",
+  label: "Proyectos",
+  title: "Proyectos",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
-  label: "Gallery",
+  label: "Galeria",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
   // Images from https://pexels.com
   images: [
     {
-      src: "/images/gallery/img-01.jpg",
+      src: "/images/gallery/g post-6.jpg",
       alt: "image",
       orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
     },
   ],
 };

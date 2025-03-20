@@ -59,7 +59,7 @@ export const Header = () => {
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+          <img src="/images/Hglogo.svg" width="30px" alt="Hugo Macias Logo" />
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -111,6 +111,16 @@ export const Header = () => {
               )}
               
             </Flex>
+          </Flex>
+        </Flex>
+        <Flex fillWidth horizontal="end" vertical="center">
+          <Flex
+            paddingRight="12"
+            horizontal="end"
+            vertical="center"
+            textVariant="body-default-s"
+            gap="20"
+          >
           </Flex>
         </Flex>
       </Flex>
