@@ -50,7 +50,7 @@ const home = {
   headline: <>Diseñador Gráfico Senior</>,
   subline: (
     <>
-      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals KVs para redes sociales, con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para generar impacto visual.
+      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals. Con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para un generar impacto visual.
     </>
   ),
 };
@@ -75,7 +75,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Soy un diseñador creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
+        Soy diseñador creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
       </>
     ),
   },
@@ -89,7 +89,7 @@ const about = {
         role: "Diseñador Gráfico Senior, Diseñador web UX/UI",
         achievements: [
           <>
-            Como diseñador gráfico senior, he desarrollado identidades visuales y materiales gráficos impactantes para diversas marcas, trabajando en la producción de contenido digital, key visuals y campañas para empresas como Marriott, Proquim, Intaco, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner, Mall del Norte, Bristol Place y AustroRed.
+            Como diseñador gráfico senior, he desarrollado identidades visuales y materiales gráficos impactantes para diversas marcas, trabajando en la producción de contenido digital, key visuals y campañas para empresas como Grupo Marriott, Intaco, Chiveria, AustroRed, Proquim, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner, Bristol Place.
           </>,
           <>
             Además, tengo experiencia en la creación y optimización de campañas publicitarias en Meta y Google, con un enfoque en maximizar el rendimiento y la conversión mediante estrategias creativas y una segmentación efectiva.
@@ -106,7 +106,7 @@ const about = {
         role: "Diseñador Gráfico Senior, Diseñador Web, CM y Fotógrafo",
         achievements: [
           <>
-            Me especializo en la creación de material digital para redes sociales y campañas publicitarias, desarrollando piezas visuales impactantes que comunican efectivamente el mensaje de cada marca. Además, cuento con experiencia en producción audiovisual y spots publicitarios, asegurando un contenido dinámico y de alta calidad.
+            Realicé material digital para redes sociales y campañas publicitarias, desarrollando piezas visuales impactantes que comunican efectivamente el mensaje de cada marca. Además, cuento con experiencia en producción audiovisual y spots publicitarios, asegurando un contenido dinámico y de alta calidad.
           </>,
           <>
             También he trabajado en el rebranding de marcas y el desarrollo de identidades corporativas sólidas, alineadas con su esencia y valores. Gestiono estrategias de marketing digital, diseño y desarrollo páginas web, y tengo habilidades en fotografía y edición profesional para potenciar la imagen visual de cada proyecto.
@@ -142,7 +142,7 @@ const about = {
         role: "Diseñador Gráfico Senior y periodista",
         achievements: [
           <>
-            Fui responsable de la creación de contenido digital para redes sociales y plataformas multimedia de noticias políticas, asegurando una comunicación efectiva y atractiva. Realicé investigaciones periodísticas para generar contenido informativo, produje y edité material audiovisual, gestioné redes sociales como Community Manager.
+            Responsable de la creación de contenido digital para redes sociales y plataformas multimedia de noticias políticas, asegurando una comunicación efectiva y atractiva. Realicé investigaciones periodísticas para generar contenido informativo, produje y edité material audiovisual, gestioné redes sociales como Community Manager.
           </>,
         ],
         images: [],

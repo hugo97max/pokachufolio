@@ -59,7 +59,10 @@ export const Header = () => {
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          <img src="/images/Hglogo.svg" width="30px" alt="Hugo Macias Logo" />
+          {routes["/"] && (
+            <img src="/images/Hglogo.svg" width="30px" alt="Hugo Macias Logo" href="/" selected={pathname === "/"} />
+          )}
+          
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex

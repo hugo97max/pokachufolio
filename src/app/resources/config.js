@@ -4,7 +4,7 @@ const baseURL = "pokachufolio.vercel.app";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": false,
+  "/work": true,
   "/blog": false,
   "/gallery": false,
 };
@@ -57,7 +57,7 @@ const effects = {
     opacity: 100,
   },
   grid: {
-    display: false,
+    display: true,
     color: "neutral-alpha-weak",
     opacity: 100,
   },
