@@ -84,8 +84,21 @@ const about = {
     title: "Experiencia laboral",
     experiences: [
       {
+        company: "Destileria Creativa",
+        timeframe: "May 2025 - Actualidad",
+        role: "Director de Arte, Diseñador web UX/UI",
+        achievements: [
+          <>
+            Defino la dirección de arte y diseño multimedia para campañas 360°, creando conceptos sólidos que conectan la narrativa de marca con el público. Desarrollo key visuals, branding, sistemas gráficos y piezas para medios digitales e impresos, además de producir assets multimedia como motion graphics, video y contenidos interactivos.</>,
+          <>
+            Trabajo en estrecha colaboración con los equipos de estrategia y cuentas para traducir insights en propuestas visuales de alto impacto. Gestiono el proceso creativo desde el boceto hasta la entrega final, asegurando coherencia estética y eficacia en alcance y engagement.
+          </>
+        ],
+        images: [],
+      },
+      {
         company: "Quantumbit QBIT",
-        timeframe: "Jul 2024 - Actualidad",
+        timeframe: "Jul 2024 - May 2025",
         role: "Diseñador Gráfico Senior, Diseñador web UX/UI",
         achievements: [
           <>
