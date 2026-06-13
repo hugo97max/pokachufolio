@@ -79,6 +79,22 @@ const about = {
       </>
     ),
   },
+  awards: {
+    display: true,
+    title: "Premios ganados",
+    items: [
+      {
+        title: "Reconocimientos destacados",
+        organization: "Premios, menciones y logros profesionales",
+        timeframe: "",
+        description: (
+          <>
+            Esta sección reunirá los premios y reconocimientos obtenidos en proyectos de diseño, branding, campañas digitales, fotografía y desarrollo web.
+          </>
+        ),
+      },
+    ],
+  },
   work: {
     display: true, // set to false to hide this section
     title: "Experiencia laboral",
