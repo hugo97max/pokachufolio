@@ -52,6 +52,11 @@ export default function About() {
       items: [],
     },
     {
+      title: about.awards.title,
+      display: about.awards.display,
+      items: about.awards.items.map((award) => award.title),
+    },
+    {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
@@ -207,6 +212,36 @@ export default function About() {
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
             </Column>
+          )}
+
+          {about.awards.display && (
+            <>
+              <Heading as="h2" id={about.awards.title} variant="display-strong-s" marginBottom="m">
+                {about.awards.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.awards.items.map((award, index) => (
+                  <Column key={`${award.title}-${index}`} fillWidth gap="4">
+                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                      <Text id={award.title} variant="heading-strong-l">
+                        {award.title}
+                      </Text>
+                      {award.timeframe && (
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {award.timeframe}
+                        </Text>
+                      )}
+                    </Flex>
+                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                      {award.organization}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {award.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
           )}
 
           {about.work.display && (
