@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Diseñador Gráfico Senior | Diseñador Web UX/UI",
+  role: "Director de Arte | Diseñador Web UX/UI",
   avatar: "/images/avatar.jpg",
   location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
@@ -47,10 +47,10 @@ const home = {
   label: "Home",
   title: `${person.name} - Portafolio`,
   description: `Conoce más sobre mis proyectos.`,
-  headline: <>Diseñador Gráfico Senior</>,
+  headline: <>Director de Arte</>,
   subline: (
     <>
-      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Diseñador gráfico y web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals. Con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para un generar impacto visual.
+      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Director de arte y diseñador web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals. Con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para un generar impacto visual.
     </>
   ),
 };
@@ -75,7 +75,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Soy diseñador creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
+        Soy director de arte creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
       </>
     ),
   },
@@ -84,12 +84,32 @@ const about = {
     title: "Premios ganados",
     items: [
       {
-        title: "Reconocimientos destacados",
-        organization: "Premios, menciones y logros profesionales",
-        timeframe: "",
+        title: "WINA - World Independent Advertising Awards",
+        organization: "WINA Festival",
+        timeframe: "6 premios",
         description: (
           <>
-            Esta sección reunirá los premios y reconocimientos obtenidos en proyectos de diseño, branding, campañas digitales, fotografía y desarrollo web.
+            Reconocimientos obtenidos en WINA, festival internacional que destaca el trabajo de agencias y talentos creativos independientes alrededor del mundo.
+          </>
+        ),
+      },
+      {
+        title: "FePI - Festival Internacional de la Publicidad Independiente",
+        organization: "FePI",
+        timeframe: "5 premios",
+        description: (
+          <>
+            Premios obtenidos en FePI, festival dedicado a reconocer la creatividad independiente y el trabajo de agencias y profesionales indies.
+          </>
+        ),
+      },
+      {
+        title: "El Ojo de Iberoamérica",
+        organization: "Festival Internacional El Ojo de Iberoamérica",
+        timeframe: "1 shortlist",
+        description: (
+          <>
+            Selección en shortlist dentro de uno de los festivales iberoamericanos más importantes para la creatividad, la comunicación y el entretenimiento.
           </>
         ),
       },
