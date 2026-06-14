@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
@@ -51,14 +50,32 @@ export default function Portfolio() {
 
       <section className={styles.grid} aria-label="Proyectos de portafolio">
         {portfolioProjects.map((project, index) => (
-          <Link key={project.slug} href={`/portfolio/${project.slug}`} className={styles.card}>
+          <a
+            key={project.slug}
+            href={project.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.card}
+            aria-label={`Abrir ${project.title} en Behance`}
+          >
             <Flex className={styles.coverWrap}>
-              <img
-                src={project.cover}
-                alt={`Portada del proyecto ${project.title}`}
-                className={styles.cover}
-                loading={index < 3 ? "eager" : "lazy"}
-              />
+              {project.cover ? (
+                <img
+                  src={project.cover}
+                  alt={`Portada del proyecto ${project.title}`}
+                  className={styles.cover}
+                  loading={index < 3 ? "eager" : "lazy"}
+                />
+              ) : (
+                <Column horizontal="center" vertical="center" gap="8" className={styles.coverFallback}>
+                  <Text variant="label-default-s" onBackground="neutral-weak">
+                    Behance
+                  </Text>
+                  <Text variant="heading-strong-m" align="center">
+                    {project.title}
+                  </Text>
+                </Column>
+              )}
             </Flex>
 
             <Column gap="12" padding="20" className={styles.cardBody}>
@@ -71,17 +88,24 @@ export default function Portfolio() {
                 <Heading as="h2" variant="heading-strong-m" className={styles.cardTitle}>
                   {project.title}
                 </Heading>
-                <Text variant="body-default-s" onBackground="neutral-weak" className={styles.summary}>
-                  {project.summary}
-                </Text>
+                {project.summary && (
+                  <Text variant="body-default-s" onBackground="neutral-weak" className={styles.summary}>
+                    {project.summary}
+                  </Text>
+                )}
+                {project.team?.length > 0 && (
+                  <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.teamLine}>
+                    Equipo: {project.team.join(", ")}
+                  </Text>
+                )}
               </Column>
 
               <Flex gap="8" wrap>
-                <span className={styles.role}>{project.role}</span>
+                {project.role && <span className={styles.role}>{project.role}</span>}
                 {project.recognition && <span className={styles.recognition}>{project.recognition}</span>}
               </Flex>
             </Column>
-          </Link>
+          </a>
         ))}
       </section>
     </Column>
