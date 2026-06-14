@@ -4,6 +4,24 @@ import { person } from "@/app/resources/content";
 import { portfolioProjects } from "@/app/resources/portfolio";
 import styles from "./portfolio.module.scss";
 
+function getOwnerName(owner) {
+  return typeof owner === "string" ? owner : owner.name;
+}
+
+function getOwnerAvatar(owner) {
+  return typeof owner === "string" ? "" : owner.avatar;
+}
+
+function getInitials(name) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+}
+
 export async function generateMetadata() {
   const title = "Portafolio";
   const description = `Proyectos seleccionados de ${person.name}, director de arte enfocado en campañas, sistemas visuales y narrativa de marca.`;
@@ -49,64 +67,78 @@ export default function Portfolio() {
       </Column>
 
       <section className={styles.grid} aria-label="Proyectos de portafolio">
-        {portfolioProjects.map((project, index) => (
-          <a
-            key={project.slug}
-            href={project.source}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-            aria-label={`Abrir ${project.title} en Behance`}
-          >
-            <Flex className={styles.coverWrap}>
-              {project.cover ? (
-                <img
-                  src={project.cover}
-                  alt={`Portada del proyecto ${project.title}`}
-                  className={styles.cover}
-                  loading={index < 3 ? "eager" : "lazy"}
-                />
-              ) : (
-                <Column horizontal="center" vertical="center" gap="8" className={styles.coverFallback}>
-                  <Text variant="label-default-s" onBackground="neutral-weak">
-                    Behance
-                  </Text>
-                  <Text variant="heading-strong-m" align="center">
-                    {project.title}
-                  </Text>
-                </Column>
-              )}
-            </Flex>
+        {portfolioProjects.map((project, index) => {
+          const owners = project.team || [];
 
-            <Column gap="12" padding="20" className={styles.cardBody}>
-              <Flex gap="8" wrap className={styles.metaRow}>
-                <span className={styles.meta}>{project.category}</span>
-                {project.date && <span className={styles.meta}>{project.date}</span>}
+          return (
+            <a
+              key={project.slug}
+              href={project.source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+              aria-label={`Abrir ${project.title} en Behance`}
+            >
+              <Flex className={styles.coverWrap}>
+                {project.cover ? (
+                  <img
+                    src={project.cover}
+                    alt={`Portada del proyecto ${project.title}`}
+                    className={styles.cover}
+                    loading={index < 3 ? "eager" : "lazy"}
+                  />
+                ) : (
+                  <Column horizontal="center" vertical="center" gap="8" className={styles.coverFallback}>
+                    <Text variant="label-default-s" onBackground="neutral-weak">
+                      Behance
+                    </Text>
+                    <Text variant="heading-strong-m" align="center">
+                      {project.title}
+                    </Text>
+                  </Column>
+                )}
               </Flex>
 
-              <Column gap="8">
+              <Column gap="14" padding="20" className={styles.cardBody}>
+                <Flex gap="8" wrap className={styles.metaRow}>
+                  <span className={styles.meta}>{project.category}</span>
+                  {project.date && <span className={styles.meta}>{project.date}</span>}
+                </Flex>
+
                 <Heading as="h2" variant="heading-strong-m" className={styles.cardTitle}>
                   {project.title}
                 </Heading>
-                {project.summary && (
-                  <Text variant="body-default-s" onBackground="neutral-weak" className={styles.summary}>
-                    {project.summary}
-                  </Text>
-                )}
-                {project.team?.length > 0 && (
-                  <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.teamLine}>
-                    Equipo: {project.team.join(", ")}
-                  </Text>
-                )}
-              </Column>
 
-              <Flex gap="8" wrap>
-                {project.role && <span className={styles.role}>{project.role}</span>}
+                {owners.length > 0 && (
+                  <Column gap="8" className={styles.ownersBlock}>
+                    <Text variant="label-default-s" onBackground="neutral-weak">
+                      Owners / co-owners
+                    </Text>
+                    <Flex gap="10" vertical="center" className={styles.ownerRow}>
+                      <div className={styles.avatarStack} aria-hidden="true">
+                        {owners.slice(0, 5).map((owner) => {
+                          const name = getOwnerName(owner);
+                          const avatar = getOwnerAvatar(owner);
+
+                          return (
+                            <span key={name} className={styles.ownerAvatar} title={name}>
+                              {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
+                            </span>
+                          );
+                        })}
+                      </div>
+                      <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.ownerNames}>
+                        {owners.map(getOwnerName).join(", ")}
+                      </Text>
+                    </Flex>
+                  </Column>
+                )}
+
                 {project.recognition && <span className={styles.recognition}>{project.recognition}</span>}
-              </Flex>
-            </Column>
-          </a>
-        ))}
+              </Column>
+            </a>
+          );
+        })}
       </section>
     </Column>
   );
