@@ -111,12 +111,51 @@
     min-height: 3.2rem;
 }
 
-.summary {
-    min-height: 4.4rem;
+.ownersBlock {
+    padding-top: var(--static-space-12);
+    border-top: 1px solid var(--neutral-alpha-medium);
 }
 
-.teamLine {
+.ownerRow {
+    min-width: 0;
+}
+
+.avatarStack {
+    display: flex;
+    flex-shrink: 0;
+    padding-left: 2px;
+}
+
+.ownerAvatar {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -6px;
+    color: var(--neutral-on-background-strong);
+    border: 1px solid var(--surface-background);
+    border-radius: 999px;
+    background: var(--neutral-alpha-medium);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.ownerAvatar:first-child {
+    margin-left: 0;
+}
+
+.ownerAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ownerNames {
     display: -webkit-box;
+    min-width: 0;
     overflow: hidden;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -184,8 +223,7 @@
         grid-template-columns: 1fr;
     }
 
-    .cardTitle,
-    .summary {
+    .cardTitle {
         min-height: 0;
     }
 
