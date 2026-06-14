@@ -26,24 +26,26 @@ export function generateMetadata({ params }: PortfolioProjectParams) {
 
   return {
     title: project.title,
-    description: project.summary,
+    description: project.summary || `Proyecto de portafolio de ${person.name}`,
     openGraph: {
       title: project.title,
-      description: project.summary,
+      description: project.summary || `Proyecto de portafolio de ${person.name}`,
       type: "article",
       url: `https://${baseURL}/portfolio/${project.slug}`,
-      images: [
-        {
-          url: project.cover,
-          alt: project.title,
-        },
-      ],
+      images: project.cover
+        ? [
+            {
+              url: project.cover,
+              alt: project.title,
+            },
+          ]
+        : [],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
-      description: project.summary,
-      images: [project.cover],
+      description: project.summary || `Proyecto de portafolio de ${person.name}`,
+      images: project.cover ? [project.cover] : [],
     },
   };
 }
@@ -65,21 +67,41 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
           {project.category}
         </Text>
         <Heading variant="display-strong-s">{project.title}</Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak">
-          {project.summary}
-        </Text>
+        {project.summary && (
+          <Text variant="body-default-l" onBackground="neutral-weak">
+            {project.summary}
+          </Text>
+        )}
+        {project.team?.length > 0 && (
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            Equipo: {project.team.join(", ")}
+          </Text>
+        )}
       </Column>
 
       <Column className={styles.detailHero}>
-        <img src={project.cover} alt={`Portada del proyecto ${project.title}`} className={styles.detailCover} />
+        {project.cover ? (
+          <img src={project.cover} alt={`Portada del proyecto ${project.title}`} className={styles.detailCover} />
+        ) : (
+          <Column horizontal="center" vertical="center" gap="8" className={styles.detailCoverFallback}>
+            <Text variant="label-default-s" onBackground="neutral-weak">
+              Behance
+            </Text>
+            <Text variant="heading-strong-l" align="center">
+              {project.title}
+            </Text>
+          </Column>
+        )}
         <Column gap="24" padding="32">
           <div className={styles.detailMeta}>
-            <Column gap="4" className={styles.metaBlock}>
-              <Text variant="label-default-s" onBackground="neutral-weak">
-                Rol
-              </Text>
-              <Text variant="body-strong-m">{project.role}</Text>
-            </Column>
+            {project.role && (
+              <Column gap="4" className={styles.metaBlock}>
+                <Text variant="label-default-s" onBackground="neutral-weak">
+                  Rol
+                </Text>
+                <Text variant="body-strong-m">{project.role}</Text>
+              </Column>
+            )}
             {project.date && (
               <Column gap="4" className={styles.metaBlock}>
                 <Text variant="label-default-s" onBackground="neutral-weak">
@@ -134,8 +156,14 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
 
         {project.source && (
           <Flex paddingTop="8">
-            <Button href={project.source} target="_blank" rel="noreferrer" variant="secondary" prefixIcon="arrowUpRight">
-              Ver referencia original
+            <Button
+              href={project.source}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              prefixIcon="arrowUpRight"
+            >
+              Ver post original en Behance
             </Button>
           </Flex>
         )}
