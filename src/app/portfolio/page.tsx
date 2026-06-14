@@ -12,6 +12,10 @@ function getOwnerAvatar(owner) {
   return typeof owner === "string" ? "" : owner.avatar;
 }
 
+function getOwnerRole(owner) {
+  return typeof owner === "string" ? "" : owner.role;
+}
+
 function getInitials(name) {
   return name
     .split(" ")
@@ -55,15 +59,7 @@ export default function Portfolio() {
   return (
     <Column maxWidth="l" gap="xl" paddingX="l">
       <Column fillWidth gap="m" paddingTop="64" paddingBottom="24" className={styles.hero}>
-        <Text variant="label-default-s" onBackground="brand-weak">
-          Portafolio propio
-        </Text>
-        <Heading variant="display-strong-l">Dirección de arte, campañas y sistemas visuales.</Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak" className={styles.heroText}>
-          Una selección de proyectos construidos desde la conceptualización visual, el desarrollo de
-          key visuals, branding, narrativa de marca y dirección estética para piezas digitales,
-          impresas y de comunicación integrada.
-        </Text>
+        <Heading variant="display-strong-l">Conoce más de mi portafolio</Heading>
       </Column>
 
       <section className={styles.grid} aria-label="Proyectos de portafolio">
@@ -114,23 +110,25 @@ export default function Portfolio() {
                     <Text variant="label-default-s" onBackground="neutral-weak">
                       Owners / co-owners
                     </Text>
-                    <Flex gap="8" vertical="center" className={styles.ownerRow}>
-                      <div className={styles.avatarStack} aria-hidden="true">
-                        {owners.slice(0, 5).map((owner) => {
-                          const name = getOwnerName(owner);
-                          const avatar = getOwnerAvatar(owner);
+                    <div className={styles.ownerList}>
+                      {owners.map((owner) => {
+                        const name = getOwnerName(owner);
+                        const avatar = getOwnerAvatar(owner);
+                        const role = getOwnerRole(owner);
 
-                          return (
-                            <span key={name} className={styles.ownerAvatar} title={name}>
+                        return (
+                          <div key={name} className={styles.ownerItem}>
+                            <span className={styles.ownerAvatar} title={name}>
                               {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
                             </span>
-                          );
-                        })}
-                      </div>
-                      <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.ownerNames}>
-                        {owners.map(getOwnerName).join(", ")}
-                      </Text>
-                    </Flex>
+                            <span className={styles.ownerText}>
+                              <span className={styles.ownerName}>{name}</span>
+                              {role && <span className={styles.ownerRole}>{role}</span>}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </Column>
                 )}
 
