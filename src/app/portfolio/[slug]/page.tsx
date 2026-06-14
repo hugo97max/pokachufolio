@@ -92,7 +92,7 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
             <Text variant="label-default-s" onBackground="neutral-weak">
               Owners / co-owners
             </Text>
-            <Flex gap="10" vertical="center" className={styles.ownerRow}>
+            <Flex gap="8" vertical="center" className={styles.ownerRow}>
               <div className={styles.avatarStack} aria-hidden="true">
                 {owners.slice(0, 7).map((owner) => {
                   const name = getOwnerName(owner);
