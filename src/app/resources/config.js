@@ -4,6 +4,7 @@ const baseURL = "pokachufolio.vercel.app";
 const routes = {
   "/": true,
   "/about": true,
+  "/portfolio": true,
   "/work": true,
   "/blog": false,
   "/gallery": false,
