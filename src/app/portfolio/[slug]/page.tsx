@@ -11,6 +11,24 @@ interface PortfolioProjectParams {
   };
 }
 
+function getOwnerName(owner) {
+  return typeof owner === "string" ? owner : owner.name;
+}
+
+function getOwnerAvatar(owner) {
+  return typeof owner === "string" ? "" : owner.avatar;
+}
+
+function getInitials(name) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+}
+
 export function generateStaticParams() {
   return portfolioProjects.map((project) => ({
     slug: project.slug,
@@ -26,10 +44,10 @@ export function generateMetadata({ params }: PortfolioProjectParams) {
 
   return {
     title: project.title,
-    description: project.summary || `Proyecto de portafolio de ${person.name}`,
+    description: `Proyecto de portafolio de ${person.name}`,
     openGraph: {
       title: project.title,
-      description: project.summary || `Proyecto de portafolio de ${person.name}`,
+      description: `Proyecto de portafolio de ${person.name}`,
       type: "article",
       url: `https://${baseURL}/portfolio/${project.slug}`,
       images: project.cover
@@ -44,7 +62,7 @@ export function generateMetadata({ params }: PortfolioProjectParams) {
     twitter: {
       card: "summary_large_image",
       title: project.title,
-      description: project.summary || `Proyecto de portafolio de ${person.name}`,
+      description: `Proyecto de portafolio de ${person.name}`,
       images: project.cover ? [project.cover] : [],
     },
   };
@@ -57,6 +75,8 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
     notFound();
   }
 
+  const owners = project.team || [];
+
   return (
     <Column as="section" maxWidth="l" gap="xl" paddingX="l" paddingTop="64" paddingBottom="64">
       <Column maxWidth="s" gap="16">
@@ -67,15 +87,29 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
           {project.category}
         </Text>
         <Heading variant="display-strong-s">{project.title}</Heading>
-        {project.summary && (
-          <Text variant="body-default-l" onBackground="neutral-weak">
-            {project.summary}
-          </Text>
-        )}
-        {project.team?.length > 0 && (
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            Equipo: {project.team.join(", ")}
-          </Text>
+        {owners.length > 0 && (
+          <Column gap="8" className={styles.ownersBlock}>
+            <Text variant="label-default-s" onBackground="neutral-weak">
+              Owners / co-owners
+            </Text>
+            <Flex gap="10" vertical="center" className={styles.ownerRow}>
+              <div className={styles.avatarStack} aria-hidden="true">
+                {owners.slice(0, 7).map((owner) => {
+                  const name = getOwnerName(owner);
+                  const avatar = getOwnerAvatar(owner);
+
+                  return (
+                    <span key={name} className={styles.ownerAvatar} title={name}>
+                      {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
+                    </span>
+                  );
+                })}
+              </div>
+              <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.ownerNames}>
+                {owners.map(getOwnerName).join(", ")}
+              </Text>
+            </Flex>
+          </Column>
         )}
       </Column>
 
@@ -130,20 +164,6 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
       </Column>
 
       <Column maxWidth="m" gap="24">
-        <Column gap="8">
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Lectura del proyecto
-          </Text>
-          <Heading as="h2" variant="heading-strong-l">
-            Construcción conceptual y dirección visual
-          </Heading>
-          <Text variant="body-default-m" onBackground="neutral-weak">
-            Este proyecto se presenta como parte del portafolio editorial de {person.name}, con foco en
-            la idea central, la dirección estética y la manera en que el sistema visual puede sostener
-            una campaña o experiencia de marca.
-          </Text>
-        </Column>
-
         {project.highlights?.length > 0 && (
           <ul className={styles.highlights}>
             {project.highlights.map((highlight) => (
