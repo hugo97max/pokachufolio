@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Director de Arte | Diseñador Web UX/UI",
+  role: "Director de Arte | UX/UI",
   avatar: "/images/avatar.jpg",
   location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
@@ -50,7 +50,7 @@ const home = {
   headline: <>Director de Arte</>,
   subline: (
     <>
-      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Director de arte y diseñador web con experiencia en branding, contenido para redes de multimarcas y desarrollo de key visuals. Con habilidades en diseño de interfaces y experiencia de usuario UX/UI, combinando creatividad y estrategia para un generar impacto visual.
+      Hola, soy Hugo <InlineCode>Pokachu</InlineCode>. Director de arte enfocado en conceptualización visual, campañas, branding, key visuals y sistemas visuales para marcas. También desarrollo experiencias web UX/UI, combinando estrategia, narrativa y dirección estética para generar impacto visual.
     </>
   ),
 };
@@ -75,7 +75,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Soy director de arte creativo y apasionado con experiencia en diseño gráfico, publicidad, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en la creación de contenido personalizado, gestión de redes sociales, producción audiovisual, programación frontend y diseño web UI/UX, siempre enfocado en ofrecer soluciones visuales funcionales y atractivas.
+        Soy director de arte con experiencia en campañas, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en transformar ideas en sistemas visuales claros: desde la conceptualización y el desarrollo de key visuals hasta la dirección estética de piezas para marcas, productos y comunicación.
       </>
     ),
   },
@@ -135,16 +135,16 @@ const about = {
       {
         company: "Quantumbit QBIT",
         timeframe: "Jul 2024 - May 2025",
-        role: "Diseñador Gráfico Senior, Diseñador web UX/UI",
+        role: "Director Visual Senior, Diseñador web UX/UI",
         achievements: [
           <>
-            Como diseñador gráfico senior, he desarrollado identidades visuales y materiales gráficos impactantes para diversas marcas, trabajando en la producción de contenido digital, key visuals y campañas para empresas como Grupo Marriott, Intaco, Chiveria, AustroRed, Proquim, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner, Bristol Place.
+            Desarrollé identidades visuales, sistemas gráficos, key visuals y campañas para marcas como Grupo Marriott, Intaco, Chiveria, AustroRed, Proquim, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner y Bristol Place, cuidando la coherencia estética y la fuerza conceptual de cada pieza.
           </>,
           <>
-            Además, tengo experiencia en la creación y optimización de campañas publicitarias en Meta y Google, con un enfoque en maximizar el rendimiento y la conversión mediante estrategias creativas y una segmentación efectiva.
+            Participé en la creación y optimización de campañas publicitarias en Meta y Google, combinando estrategia creativa, segmentación y dirección visual para mejorar rendimiento, alcance y conversión.
           </>,
           <>
-            Tengo experiencia como diseñador web UX/UI, creando interfaces intuitivas y atractivas centradas en el usuario. Mi enfoque ha sido optimizar la usabilidad y la interacción en sitios web y aplicaciones, trabajando de cerca con equipos de desarrollo para asegurar que los diseños sean estéticamente agradables y técnicamente viables.
+            También desarrollé interfaces UX/UI centradas en claridad, usabilidad y experiencia de marca, trabajando de cerca con equipos de desarrollo para convertir propuestas visuales en productos digitales viables.
           </>,
         ],
         images: [],
@@ -152,13 +152,13 @@ const about = {
       {
         company: "Grupo Ronquillo Sandoya",
         timeframe: "Jul 2021 - Abr 2024",
-        role: "Diseñador Gráfico Senior, Diseñador Web, CM y Fotógrafo",
+        role: "Director Visual, Diseñador Web, CM y Fotógrafo",
         achievements: [
           <>
-            Realicé material digital para redes sociales y campañas publicitarias, desarrollando piezas visuales impactantes que comunican efectivamente el mensaje de cada marca. Además, cuento con experiencia en producción audiovisual y spots publicitarios, asegurando un contenido dinámico y de alta calidad.
+            Desarrollé campañas, contenido digital y piezas audiovisuales para redes sociales, construyendo una línea visual coherente para distintas marcas y formatos de comunicación.
           </>,
           <>
-            También he trabajado en el rebranding de marcas y el desarrollo de identidades corporativas sólidas, alineadas con su esencia y valores. Gestiono estrategias de marketing digital, diseño y desarrollo páginas web, y tengo habilidades en fotografía y edición profesional para potenciar la imagen visual de cada proyecto.
+            Lideré procesos de rebranding, identidad corporativa, marketing digital, diseño y desarrollo web, además de producción fotográfica y edición profesional para fortalecer la presencia visual de cada proyecto.
           </>,
         ],
         images: [],
@@ -166,10 +166,10 @@ const about = {
       {
         company: "IVMA Importer",
         timeframe: "Feb 2023 - Ago 2023",
-        role: "Diseñador Gráfico Senior, CM y Fotógrafo",
+        role: "Director Visual, CM y Fotógrafo",
         achievements: [
           <>
-            Trabajé en la creación de contenido digital y rediseño de marca, desarrollando material gráfico para publicidad y redes sociales. Además, diseñé y mantuve una página web eCommerce, y realicé producción fotográfica y edición.
+            Trabajé en la dirección visual de contenido digital, rediseño de marca, materiales para publicidad y redes sociales. También diseñé y mantuve una página web eCommerce, y realicé producción fotográfica y edición.
           </>
         ],
         images: [],
@@ -177,10 +177,10 @@ const about = {
       {
         company: "FCS Ecuador",
         timeframe: "Jul 2021 - Feb 2024",
-        role: "Diseñador Gráfico Senior y CM",
+        role: "Director Visual y CM",
         achievements: [
           <>
-            Trabajé en el diseño de branding, páginas web e identidad visual para Kerd, Etika y Regalart, subempresas de FCS Ecuador. Me encargué de crear materiales visuales para redes sociales y estrategias de marca, además de desarrollar e implementar rebranding para cada empresa. También gestioné comunidades digitales como Community Manager y diseñé artes pop para campañas visuales, fortaleciendo la identidad visual y la comunicación de las marcas tanto en entornos digitales como físicos.
+            Desarrollé branding, páginas web e identidad visual para Kerd, Etika y Regalart, subempresas de FCS Ecuador. Creé materiales para redes sociales, estrategias de marca y procesos de rebranding, fortaleciendo la comunicación visual de las marcas en entornos digitales y físicos.
           </>
         ],
         images: [],
@@ -188,10 +188,10 @@ const about = {
       {
         company: "Ecuador Video | Farandula Ecuatoriana",
         timeframe: "Ene 2020 - Jul 2021",
-        role: "Diseñador Gráfico Senior y periodista",
+        role: "Creador de contenido visual y periodista",
         achievements: [
           <>
-            Responsable de la creación de contenido digital para redes sociales y plataformas multimedia de noticias políticas, asegurando una comunicación efectiva y atractiva. Realicé investigaciones periodísticas para generar contenido informativo, produje y edité material audiovisual, gestioné redes sociales como Community Manager.
+            Responsable de la creación de contenido digital para redes sociales y plataformas multimedia de noticias políticas. Realicé investigaciones periodísticas, producción audiovisual, edición y gestión de comunidades digitales.
           </>,
         ],
         images: [],
@@ -251,7 +251,7 @@ const blog = {
 const work = {
   label: "Proyectos",
   title: "Proyectos",
-  description: `Design and dev projects by ${person.name}`,
+  description: `Proyectos de dirección de arte, branding, campañas y experiencias digitales de ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
