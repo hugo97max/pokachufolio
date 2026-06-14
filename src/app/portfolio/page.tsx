@@ -99,7 +99,7 @@ export default function Portfolio() {
                 )}
               </Flex>
 
-              <Column gap="14" padding="20" className={styles.cardBody}>
+              <Column gap="16" padding="20" className={styles.cardBody}>
                 <Flex gap="8" wrap className={styles.metaRow}>
                   <span className={styles.meta}>{project.category}</span>
                   {project.date && <span className={styles.meta}>{project.date}</span>}
