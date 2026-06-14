@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
+import { Button, Column, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { portfolioProjects } from "@/app/resources/portfolio";
@@ -17,6 +17,10 @@ function getOwnerName(owner) {
 
 function getOwnerAvatar(owner) {
   return typeof owner === "string" ? "" : owner.avatar;
+}
+
+function getOwnerRole(owner) {
+  return typeof owner === "string" ? "" : owner.role;
 }
 
 function getInitials(name) {
@@ -92,23 +96,25 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
             <Text variant="label-default-s" onBackground="neutral-weak">
               Owners / co-owners
             </Text>
-            <Flex gap="8" vertical="center" className={styles.ownerRow}>
-              <div className={styles.avatarStack} aria-hidden="true">
-                {owners.slice(0, 7).map((owner) => {
-                  const name = getOwnerName(owner);
-                  const avatar = getOwnerAvatar(owner);
+            <div className={styles.ownerList}>
+              {owners.map((owner) => {
+                const name = getOwnerName(owner);
+                const avatar = getOwnerAvatar(owner);
+                const role = getOwnerRole(owner);
 
-                  return (
-                    <span key={name} className={styles.ownerAvatar} title={name}>
+                return (
+                  <div key={name} className={styles.ownerItem}>
+                    <span className={styles.ownerAvatar} title={name}>
                       {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
                     </span>
-                  );
-                })}
-              </div>
-              <Text variant="body-default-xs" onBackground="neutral-weak" className={styles.ownerNames}>
-                {owners.map(getOwnerName).join(", ")}
-              </Text>
-            </Flex>
+                    <span className={styles.ownerText}>
+                      <span className={styles.ownerName}>{name}</span>
+                      {role && <span className={styles.ownerRole}>{role}</span>}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </Column>
         )}
       </Column>
@@ -172,20 +178,6 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
               </li>
             ))}
           </ul>
-        )}
-
-        {project.source && (
-          <Flex paddingTop="8">
-            <Button
-              href={project.source}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-              prefixIcon="arrowUpRight"
-            >
-              Ver post original en Behance
-            </Button>
-          </Flex>
         )}
       </Column>
     </Column>
