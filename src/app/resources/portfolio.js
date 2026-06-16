@@ -1,7 +1,25 @@
-const cesarAvatar = "https://pps.services.adobe.com/api/profile/E95DC580533DC6280A4C98A2@AdobeID/276";
-const hugoAvatar = "/images/avatar.jpg";
+import { creditAvatars } from "./creditAvatars";
+import { creditAvatarsExtra } from "./creditAvatarsExtra";
 
-const person = (name, role, avatar = "") => ({ name, role, avatar });
+const allCreditAvatars = { ...creditAvatars, ...creditAvatarsExtra };
+
+const hugoAvatar = "/images/avatar.jpg";
+const creditAvatarMap = {
+  "César Sepúlveda": allCreditAvatars.cesar,
+  "Suzanne Soria": allCreditAvatars.suzanne,
+  "Suzanne Soria D.": allCreditAvatars.suzanne,
+  "Sergio Estrella": allCreditAvatars.sergio,
+  "Ariana Vera": allCreditAvatars.ariana,
+  "Ariana Vera Bustamante": allCreditAvatars.ariana,
+  "Carlos Aguirre": allCreditAvatars.carlosAguirre,
+  "Carlos Alberto Aguirre Pesantes": allCreditAvatars.carlosAguirre,
+  "Mario González": allCreditAvatars.mario,
+  "Jeshua Quimí": allCreditAvatars.jeshua,
+  "Rafaella Hidalgo": allCreditAvatars.rafaella,
+};
+const cesarAvatar = creditAvatarMap["César Sepúlveda"];
+
+const person = (name, role, avatar = creditAvatarMap[name] ?? "") => ({ name, role, avatar });
 
 const credits = {
   antonio: person("Antonio Jiménez", "CEO / La Destilería"),
