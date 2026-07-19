@@ -1,0 +1,228 @@
+.showcase {
+    overflow: hidden;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--surface-background);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.browserBar {
+    display: grid;
+    grid-template-columns: repeat(3, 10px) minmax(0, 1fr);
+    gap: var(--static-space-8);
+    align-items: center;
+    padding: var(--static-space-16);
+    border-bottom: 1px solid var(--neutral-alpha-medium);
+}
+
+.browserBar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 65%, var(--neutral-on-background-weak));
+}
+
+.browserBar p {
+    overflow: hidden;
+    margin: 0;
+    color: var(--neutral-on-background-weak);
+    font-size: 0.76rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.demo {
+    display: grid;
+    gap: var(--static-space-32);
+    padding: var(--static-space-32);
+    background:
+        radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 26%),
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+        var(--page-background);
+}
+
+.demoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--static-space-16);
+}
+
+.demoHeader strong {
+    color: var(--neutral-on-background-strong);
+    font-size: 1rem;
+}
+
+.demoHeader nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--static-space-12);
+    justify-content: flex-end;
+}
+
+.demoHeader nav span {
+    color: var(--neutral-on-background-weak);
+    font-size: 0.78rem;
+}
+
+.demoHero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+    gap: var(--static-space-32);
+    align-items: center;
+    min-height: 360px;
+}
+
+.demoCopy {
+    max-width: 620px;
+}
+
+.demoButton,
+.demoButtonSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 var(--static-space-16);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.demoButton {
+    color: #050505;
+    background: var(--accent);
+}
+
+.demoButtonSecondary {
+    color: var(--neutral-on-background-strong);
+    border: 1px solid var(--neutral-alpha-medium);
+}
+
+.visualBlock {
+    position: relative;
+    display: grid;
+    min-height: 300px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 24%, transparent), transparent),
+        var(--neutral-alpha-weak);
+}
+
+.visualBlock span {
+    position: absolute;
+    border: 1px solid color-mix(in srgb, var(--accent) 58%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.visualBlock span:nth-child(1) {
+    inset: 12% 14% auto auto;
+    width: 46%;
+    height: 38%;
+}
+
+.visualBlock span:nth-child(2) {
+    inset: auto auto 15% 12%;
+    width: 56%;
+    height: 42%;
+}
+
+.visualBlock span:nth-child(3) {
+    inset: 22% auto auto 18%;
+    width: 28%;
+    height: 18%;
+    background: var(--accent);
+}
+
+.demoSections {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--static-space-16);
+}
+
+.demoSections article {
+    display: grid;
+    gap: var(--static-space-10);
+    padding: var(--static-space-16);
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--neutral-alpha-weak);
+}
+
+.demoSections article span {
+    width: 40px;
+    height: 4px;
+    border-radius: 99px;
+    background: var(--accent);
+}
+
+.demoSections article strong {
+    color: var(--neutral-on-background-strong);
+    font-size: 0.9rem;
+}
+
+.demoSections article p {
+    margin: 0;
+    color: var(--neutral-on-background-weak);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.metaGrid,
+.notesGrid {
+    display: grid;
+    gap: var(--static-space-16);
+}
+
+.metaGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.notesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metaCard,
+.note {
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--surface-background);
+}
+
+.metaCard {
+    padding: var(--static-space-20);
+}
+
+@media (max-width: 1024px) {
+    .demoHero,
+    .notesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .demoSections {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .demo {
+        padding: var(--static-space-20);
+    }
+
+    .demoHeader {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .demoHeader nav {
+        justify-content: flex-start;
+    }
+
+    .demoSections,
+    .metaGrid {
+        grid-template-columns: 1fr;
+    }
+}

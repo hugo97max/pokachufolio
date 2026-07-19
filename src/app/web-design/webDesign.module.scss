@@ -2,45 +2,54 @@
     border-bottom: 1px solid var(--neutral-alpha-medium);
 }
 
-.canvas {
-    position: relative;
-    overflow: hidden;
-    min-height: 360px;
-    border: 1px solid var(--neutral-alpha-medium);
-    border-radius: 8px;
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
-        var(--surface-background);
-}
-
-.canvas::before {
-    position: absolute;
-    inset: 0;
-    content: "";
-    background:
-        linear-gradient(90deg, var(--neutral-alpha-weak) 1px, transparent 1px),
-        linear-gradient(var(--neutral-alpha-weak) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-    pointer-events: none;
-}
-
-.preview {
-    position: relative;
+.grid {
     display: grid;
-    width: min(100%, 760px);
-    min-height: 240px;
-    gap: var(--static-space-16);
-    padding: var(--static-space-24);
-    border: 1px solid var(--neutral-alpha-medium);
-    border-radius: 8px;
-    background: var(--page-background);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-    animation: floatIn 700ms ease both;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--static-space-24);
 }
 
-.previewTop {
+.card,
+.archiveItem {
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--surface-background);
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.card {
     display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card:hover,
+.archiveItem:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+    background: var(--neutral-alpha-weak);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+
+.browser {
+    display: grid;
+    min-height: 260px;
+    gap: var(--static-space-20);
+    padding: var(--static-space-16);
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), transparent 48%),
+        var(--page-background);
+}
+
+.browserTop {
+    display: grid;
+    grid-template-columns: repeat(3, 10px) minmax(0, 1fr);
     gap: var(--static-space-8);
 }
 
@@ -48,55 +57,144 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--neutral-alpha-strong);
+    background: color-mix(in srgb, var(--accent) 65%, var(--neutral-on-background-weak));
 }
 
-.previewGrid {
+.domain {
+    overflow: hidden;
+    color: var(--neutral-on-background-weak);
+    font-size: 0.72rem;
+    line-height: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.browserHero {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: var(--static-space-20);
+    min-height: 126px;
+    align-content: end;
+    gap: var(--static-space-8);
+    padding: var(--static-space-20);
+    border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 78% 24%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 30%),
+        var(--neutral-alpha-weak);
+}
+
+.browserHero strong {
+    color: var(--neutral-on-background-strong);
+    font-size: 1.45rem;
+    line-height: 1.05;
+}
+
+.browserHero span:last-child {
+    color: var(--neutral-on-background-weak);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.kicker,
+.tag {
+    display: inline-flex;
+    width: fit-content;
     align-items: center;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    line-height: 1.2;
 }
 
-.previewLines {
+.kicker {
+    color: color-mix(in srgb, var(--accent) 78%, var(--neutral-on-background-strong));
+}
+
+.tag {
+    padding: 0.32rem 0.54rem;
+    color: var(--neutral-on-background-weak);
+    border: 1px solid var(--neutral-alpha-medium);
+}
+
+.browserGrid {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--static-space-8);
+}
+
+.browserGrid span {
+    overflow: hidden;
+    padding: var(--static-space-12);
+    color: var(--neutral-on-background-weak);
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 6px;
+    background: var(--neutral-alpha-weak);
+    font-size: 0.74rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cardBody {
+    flex: 1;
+}
+
+.archiveGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--static-space-12);
 }
 
-.line {
-    height: 12px;
-    border-radius: 999px;
-    background: var(--neutral-alpha-medium);
+.archiveItem {
+    display: grid;
+    grid-template-columns: 12px minmax(0, 1fr) auto;
+    gap: var(--static-space-12);
+    align-items: center;
+    padding: var(--static-space-16);
 }
 
-.lineStrong {
-    width: 82%;
-    height: 28px;
-    background: var(--brand-alpha-medium);
+.archiveMark {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
 }
 
-.visual {
-    min-height: 150px;
-    border-radius: 8px;
-    background:
-        radial-gradient(circle at 25% 20%, var(--brand-alpha-medium), transparent 34%),
-        linear-gradient(135deg, var(--accent-alpha-weak), var(--neutral-alpha-weak));
+.archiveItem span:nth-child(2) {
+    display: grid;
+    min-width: 0;
+    gap: 2px;
 }
 
-@keyframes floatIn {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.98);
-    }
+.archiveItem strong,
+.archiveItem small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+.archiveItem strong {
+    color: var(--neutral-on-background-strong);
+    font-size: 0.9rem;
+}
+
+.archiveItem small,
+.archiveItem em {
+    color: var(--neutral-on-background-weak);
+    font-size: 0.76rem;
+    font-style: normal;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 720px) {
-    .previewGrid {
+    .grid,
+    .archiveGrid {
         grid-template-columns: 1fr;
+    }
+
+    .browser {
+        min-height: 220px;
     }
 }
