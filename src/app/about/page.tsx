@@ -153,7 +153,11 @@ export default function About() {
                       vertical="center"
                     >
                       <Flex className={styles.awardMark} horizontal="center" vertical="center">
-                        {award.mark}
+                        {award.icon ? (
+                          <img src={award.icon} alt={`${award.mark} logo`} />
+                        ) : (
+                          award.mark
+                        )}
                       </Flex>
                       <Column gap="2">
                         <Text variant="label-strong-s" onBackground="brand-weak">
