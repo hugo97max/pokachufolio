@@ -57,6 +57,11 @@ export default function About() {
       items: about.awards.items.map((award) => award.title),
     },
     {
+      title: about.references.title,
+      display: about.references.display,
+      items: about.references.items.map((reference) => reference.name),
+    },
+    {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
@@ -237,6 +242,30 @@ export default function About() {
                     </Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {award.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.references.display && (
+            <>
+              <Heading as="h2" id={about.references.title} variant="display-strong-s" marginBottom="m">
+                {about.references.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.references.items.map((reference, index) => (
+                  <Column key={`${reference.name}-${index}`} fillWidth gap="4">
+                    <Text id={reference.name} variant="heading-strong-l">
+                      {reference.name}
+                    </Text>
+                    <Text variant="body-default-s" onBackground="brand-weak">
+                      {reference.role}
+                      {reference.organization && ` | ${reference.organization}`}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {reference.contact}
                     </Text>
                   </Column>
                 ))}
