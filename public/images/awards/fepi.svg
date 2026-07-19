@@ -1,8 +1,12 @@
-<svg width="96" height="64" viewBox="0 0 96 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
   <title id="title">FePI</title>
-  <rect width="96" height="64" rx="10" fill="#101014"/>
-  <path d="M17 18h26v7H25v6h15v7H25v12h-8V18Z" fill="#FFDD2D"/>
-  <path d="M47 18h19c7 0 12 4 12 11s-5 12-12 12H55v9h-8V18Zm8 7v9h10c3 0 5-2 5-5s-2-4-5-4H55Z" fill="#F4F7FB"/>
-  <circle cx="81" cy="47" r="4" fill="#F45B69"/>
-  <path d="M16 54h44" stroke="#F45B69" stroke-width="3" stroke-linecap="round"/>
+  <rect width="900" height="900" fill="#FFD200"/>
+  <defs>
+    <path id="star" d="M0 -78L17.5 -24.1H74.1L28.3 9.2L45.8 63.1L0 29.8L-45.8 63.1L-28.3 9.2L-74.1 -24.1H-17.5L0 -78Z"/>
+  </defs>
+  <use href="#star" transform="translate(390 299) scale(1.2)" fill="#FFFFFF"/>
+  <use href="#star" transform="translate(472 198) scale(0.77)" fill="#FFFFFF"/>
+  <use href="#star" transform="translate(545 304) scale(0.64)" fill="#FFFFFF"/>
+  <use href="#star" transform="translate(389 424) scale(0.63)" fill="#FFFFFF"/>
+  <text x="124" y="687" fill="#FFFFFF" font-family="Arial Black, Impact, Arial, sans-serif" font-size="247" font-weight="900" letter-spacing="-10">FePI</text>
 </svg>
