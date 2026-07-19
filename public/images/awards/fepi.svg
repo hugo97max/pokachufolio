@@ -1,0 +1,8 @@
+<svg width="96" height="64" viewBox="0 0 96 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">FePI</title>
+  <rect width="96" height="64" rx="10" fill="#101014"/>
+  <path d="M17 18h26v7H25v6h15v7H25v12h-8V18Z" fill="#FFDD2D"/>
+  <path d="M47 18h19c7 0 12 4 12 11s-5 12-12 12H55v9h-8V18Zm8 7v9h10c3 0 5-2 5-5s-2-4-5-4H55Z" fill="#F4F7FB"/>
+  <circle cx="81" cy="47" r="4" fill="#F45B69"/>
+  <path d="M16 54h44" stroke="#F45B69" stroke-width="3" stroke-linecap="round"/>
+</svg>
