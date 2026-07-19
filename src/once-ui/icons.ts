@@ -31,6 +31,8 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiBriefcaseDuotone,
+  PiMonitorDuotone,
 } from "react-icons/pi";
 
 import { FaBehance, FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
@@ -53,6 +55,8 @@ export const iconLibrary: Record<string, IconType> = {
   globe: HiMiniGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
+  briefcase: PiBriefcaseDuotone,
+  monitor: PiMonitorDuotone,
   book: PiBookBookmarkDuotone,
   close: HiMiniXMark,
   openLink: HiOutlineLink,
