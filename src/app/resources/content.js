@@ -88,7 +88,7 @@ const about = {
         organization: "WINA Festival",
         timeframe: "6 premios",
         mark: "WINA",
-        icon: "/images/awards/wina.svg",
+        icon: "/images/awards/wina.png",
         result: "Winner",
         count: "6 premios",
         description: (
@@ -102,7 +102,7 @@ const about = {
         organization: "FePI",
         timeframe: "5 premios",
         mark: "FePI",
-        icon: "/images/awards/fepi.svg",
+        icon: "/images/awards/fepi.png",
         result: "Winner",
         count: "5 premios",
         description: (
@@ -116,7 +116,7 @@ const about = {
         organization: "Festival Internacional El Ojo de Iberoamérica",
         timeframe: "1 shortlist",
         mark: "El Ojo",
-        icon: "/images/awards/el-ojo.svg",
+        icon: "/images/awards/el-ojo.png",
         result: "Shortlist",
         count: "1 shortlist",
         description: (
@@ -130,7 +130,7 @@ const about = {
         organization: "Lürzer’s Archive",
         timeframe: "Mención editorial",
         mark: "Lürzer",
-        icon: "/images/awards/luerzers.svg",
+        icon: "/images/awards/luerzers.png",
         result: "Featured",
         count: "Mención",
         description: (
@@ -340,3 +340,6 @@ const gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, webDesign, gallery };
+
+
+
