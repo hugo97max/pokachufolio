@@ -4,7 +4,6 @@ export {
   protectedRoutes,
   effects,
   style,
-  display,
   mailchimp,
   baseURL,
 } from "@/app/resources/config";
