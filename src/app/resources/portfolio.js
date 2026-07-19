@@ -61,6 +61,35 @@ const credits = {
 
 const portfolioProjects = [
   {
+    slug: "no-le-regales-cualquier-huev",
+    title: "No le regales cualquier huev***",
+    date: "June 19th 2026",
+    category: "Campaign / Retail / Automotive",
+    cover: "https://mir-s3-cdn-cf.behance.net/projects/404/f6bd82251364787.Y3JvcCw5ODEsNzY4LDE3Nyww.png",
+    role: "Campaign: No le regales cualquier huev***",
+    source: "https://www.behance.net/gallery/251364787/No-le-regales-cualquier-huev",
+    recognition: "",
+    team: [
+      credits.antonio,
+      credits.monica,
+      credits.cesar,
+      credits.suzanneD,
+      credits.hugo,
+      person("Jeshua Quimí", "Art Director"),
+      person("Sergio Estrella", "Art Director"),
+      credits.ariana,
+      credits.meche,
+      person("Oscar Borja", "Director"),
+      credits.carlosAguirre,
+      person("Daniel Vélez", "Client"),
+    ],
+    highlights: [
+      "Advertising Agency: Destilería",
+      "Brand: Motorscorp / Almacenes AlPrecio",
+      "Campaign: No le regales cualquier huev***",
+    ],
+  },
+  {
     slug: "santa-hates-us-almacenes-alprecio",
     title: "Santa Hates Us - Almacenes Alprecio",
     date: "",
