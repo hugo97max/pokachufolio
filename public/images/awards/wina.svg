@@ -1,0 +1,7 @@
+<svg width="96" height="64" viewBox="0 0 96 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">WINA</title>
+  <rect width="96" height="64" rx="10" fill="#050505"/>
+  <path d="M11 18h8l5 22 6-22h7l6 22 5-22h8l-9 32h-8l-6-20-6 20h-8L11 18Z" fill="#F4F7FB"/>
+  <path d="M61 18h8v32h-8V18Zm14 0h7l9 17V18h7v32h-7L82 33v17h-7V18Z" fill="#21D17D"/>
+  <path d="M14 54h68" stroke="#21D17D" stroke-width="3" stroke-linecap="round"/>
+</svg>
