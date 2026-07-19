@@ -13,7 +13,7 @@
 }
 
 .awardStack {
-    max-width: 220px;
+    max-width: 240px;
 }
 
 .awardBadge {
@@ -25,9 +25,9 @@
 }
 
 .awardMark {
-    flex: 0 0 54px;
-    width: 54px;
-    height: 44px;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 46px;
     border: 1px solid var(--brand-alpha-medium);
     border-radius: 6px;
     color: var(--brand-on-background-strong);
@@ -37,6 +37,13 @@
     line-height: 1;
     letter-spacing: 0;
     text-transform: uppercase;
+
+    img {
+        display: block;
+        max-width: 42px;
+        max-height: 28px;
+        object-fit: contain;
+    }
 }
 
 @media (--s) {
