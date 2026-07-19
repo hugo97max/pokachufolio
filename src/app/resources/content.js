@@ -87,6 +87,9 @@ const about = {
         title: "WINA - World Independent Advertising Awards",
         organization: "WINA Festival",
         timeframe: "6 premios",
+        mark: "WINA",
+        result: "Winner",
+        count: "6 premios",
         description: (
           <>
             Reconocimientos obtenidos en WINA, festival internacional que destaca el trabajo de agencias y talentos creativos independientes alrededor del mundo.
@@ -97,6 +100,9 @@ const about = {
         title: "FePI - Festival Internacional de la Publicidad Independiente",
         organization: "FePI",
         timeframe: "5 premios",
+        mark: "FePI",
+        result: "Winner",
+        count: "5 premios",
         description: (
           <>
             Premios obtenidos en FePI, festival dedicado a reconocer la creatividad independiente y el trabajo de agencias y profesionales indies.
@@ -107,6 +113,9 @@ const about = {
         title: "El Ojo de Iberoamérica",
         organization: "Festival Internacional El Ojo de Iberoamérica",
         timeframe: "1 shortlist",
+        mark: "El Ojo",
+        result: "Shortlist",
+        count: "1 shortlist",
         description: (
           <>
             Selección en shortlist dentro de uno de los festivales iberoamericanos más importantes para la creatividad, la comunicación y el entretenimiento.
@@ -292,6 +301,13 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const webDesign = {
+  label: "Diseños Web",
+  title: "Diseños Web",
+  description: `Exploraciones web, homepages y experiencias digitales diseñadas por ${person.name}`,
+  projects: [],
+};
+
 const gallery = {
   label: "Galeria",
   title: "My photo gallery",
@@ -306,4 +322,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, webDesign, gallery };
