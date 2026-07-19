@@ -52,16 +52,6 @@ export default function About() {
       items: [],
     },
     {
-      title: about.awards.title,
-      display: about.awards.display,
-      items: about.awards.items.map((award) => award.title),
-    },
-    {
-      title: about.references.title,
-      display: about.references.display,
-      items: about.references.items.map((reference) => reference.name),
-    },
-    {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
@@ -72,9 +62,19 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
+      title: about.awards.title,
+      display: about.awards.display,
+      items: about.awards.items.map((award) => award.title),
+    },
+    {
       title: about.technical.title,
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
+    },
+    {
+      title: about.references.title,
+      display: about.references.display,
+      items: about.references.items.map((reference) => reference.name),
     },
   ];
   return (
@@ -137,6 +137,34 @@ export default function About() {
                   </Tag>
                 ))}
               </Flex>
+            )}
+            {about.awards.display && (
+              <Column className={styles.awardStack} fillWidth gap="12" paddingTop="12">
+                <Text id={about.awards.title} variant="heading-strong-s">
+                  {about.awards.title}
+                </Text>
+                <Column fillWidth gap="8">
+                  {about.awards.items.map((award) => (
+                    <Flex
+                      key={award.title}
+                      className={styles.awardBadge}
+                      fillWidth
+                      gap="12"
+                      vertical="center"
+                    >
+                      <Flex className={styles.awardMark} horizontal="center" vertical="center">
+                        {award.mark}
+                      </Flex>
+                      <Column gap="2">
+                        <Text variant="label-strong-s" onBackground="brand-weak">
+                          {award.result}
+                        </Text>
+                        <Text variant="body-strong-s">{award.count}</Text>
+                      </Column>
+                    </Flex>
+                  ))}
+                </Column>
+              </Column>
             )}
           </Column>
         )}
@@ -217,60 +245,6 @@ export default function About() {
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
             </Column>
-          )}
-
-          {about.awards.display && (
-            <>
-              <Heading as="h2" id={about.awards.title} variant="display-strong-s" marginBottom="m">
-                {about.awards.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.awards.items.map((award, index) => (
-                  <Column key={`${award.title}-${index}`} fillWidth gap="4">
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={award.title} variant="heading-strong-l">
-                        {award.title}
-                      </Text>
-                      {award.timeframe && (
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {award.timeframe}
-                        </Text>
-                      )}
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {award.organization}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {award.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {about.references.display && (
-            <>
-              <Heading as="h2" id={about.references.title} variant="display-strong-s" marginBottom="m">
-                {about.references.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.references.items.map((reference, index) => (
-                  <Column key={`${reference.name}-${index}`} fillWidth gap="4">
-                    <Text id={reference.name} variant="heading-strong-l">
-                      {reference.name}
-                    </Text>
-                    <Text variant="body-default-s" onBackground="brand-weak">
-                      {reference.role}
-                      {reference.organization && ` | ${reference.organization}`}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {reference.contact}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
           )}
 
           {about.work.display && (
@@ -365,7 +339,7 @@ export default function About() {
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column fillWidth gap="l" marginBottom="40">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
                     <Text variant="heading-strong-l">{skill.title}</Text>
@@ -398,6 +372,30 @@ export default function About() {
                         ))}
                       </Flex>
                     )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.references.display && (
+            <>
+              <Heading as="h2" id={about.references.title} variant="display-strong-s" marginBottom="m">
+                {about.references.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.references.items.map((reference, index) => (
+                  <Column key={`${reference.name}-${index}`} fillWidth gap="4">
+                    <Text id={reference.name} variant="heading-strong-l">
+                      {reference.name}
+                    </Text>
+                    <Text variant="body-default-s" onBackground="brand-weak">
+                      {reference.role}
+                      {reference.organization && ` | ${reference.organization}`}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {reference.contact}
+                    </Text>
                   </Column>
                 ))}
               </Column>
