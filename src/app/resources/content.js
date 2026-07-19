@@ -115,6 +115,42 @@ const about = {
       },
     ],
   },
+  references: {
+    display: true,
+    title: "Referencias personales",
+    items: [
+      {
+        name: "César Sepúlveda",
+        role: "Director creativo",
+        organization: "Destilería",
+        contact: "099 488 6685",
+      },
+      {
+        name: "Ing. Nicolás Franco",
+        role: "Ejecutivo de Cuentas",
+        organization: "QBIT",
+        contact: "093 910 2969",
+      },
+      {
+        name: "Ing. Yahaira Oviedo Becilla",
+        role: "Instituto Superior Tecnológico Babahoyo",
+        organization: "",
+        contact: "093 992 8329",
+      },
+      {
+        name: "Ing. Lenin Zapata Ponce",
+        role: "Periodismo y Diseño Web",
+        organization: "",
+        contact: "leninzapatap@gmail.com",
+      },
+      {
+        name: "José Muzo",
+        role: "Proyectos Freelance",
+        organization: "",
+        contact: "099 677 9474",
+      },
+    ],
+  },
   work: {
     display: true, // set to false to hide this section
     title: "Experiencia laboral",
