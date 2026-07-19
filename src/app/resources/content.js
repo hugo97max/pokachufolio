@@ -88,6 +88,7 @@ const about = {
         organization: "WINA Festival",
         timeframe: "6 premios",
         mark: "WINA",
+        icon: "/images/awards/wina.svg",
         result: "Winner",
         count: "6 premios",
         description: (
@@ -101,6 +102,7 @@ const about = {
         organization: "FePI",
         timeframe: "5 premios",
         mark: "FePI",
+        icon: "/images/awards/fepi.svg",
         result: "Winner",
         count: "5 premios",
         description: (
@@ -114,11 +116,26 @@ const about = {
         organization: "Festival Internacional El Ojo de Iberoamérica",
         timeframe: "1 shortlist",
         mark: "El Ojo",
+        icon: "/images/awards/el-ojo.svg",
         result: "Shortlist",
         count: "1 shortlist",
         description: (
           <>
             Selección en shortlist dentro de uno de los festivales iberoamericanos más importantes para la creatividad, la comunicación y el entretenimiento.
+          </>
+        ),
+      },
+      {
+        title: "Lürzer’s Archive",
+        organization: "Lürzer’s Archive",
+        timeframe: "Mención editorial",
+        mark: "Lürzer",
+        icon: "/images/awards/luerzers.svg",
+        result: "Featured",
+        count: "Mención",
+        description: (
+          <>
+            Mención para Sonidos del Mas Allá en Lürzer’s Archive, publicación internacional especializada en creatividad publicitaria.
           </>
         ),
       },
@@ -294,9 +311,9 @@ const blog = {
 };
 
 const work = {
-  label: "Proyectos",
-  title: "Proyectos",
-  description: `Proyectos de dirección de arte, branding, campañas y experiencias digitales de ${person.name}`,
+  label: "Social Media",
+  title: "Social Media",
+  description: `Contenidos visuales, piezas digitales y sistemas de comunicación para redes desarrollados por ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
