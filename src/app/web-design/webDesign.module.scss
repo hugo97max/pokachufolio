@@ -1,0 +1,102 @@
+.hero {
+    border-bottom: 1px solid var(--neutral-alpha-medium);
+}
+
+.canvas {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+        var(--surface-background);
+}
+
+.canvas::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(90deg, var(--neutral-alpha-weak) 1px, transparent 1px),
+        linear-gradient(var(--neutral-alpha-weak) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+.preview {
+    position: relative;
+    display: grid;
+    width: min(100%, 760px);
+    min-height: 240px;
+    gap: var(--static-space-16);
+    padding: var(--static-space-24);
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--page-background);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    animation: floatIn 700ms ease both;
+}
+
+.previewTop {
+    display: flex;
+    gap: var(--static-space-8);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--neutral-alpha-strong);
+}
+
+.previewGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--static-space-20);
+    align-items: center;
+}
+
+.previewLines {
+    display: grid;
+    gap: var(--static-space-12);
+}
+
+.line {
+    height: 12px;
+    border-radius: 999px;
+    background: var(--neutral-alpha-medium);
+}
+
+.lineStrong {
+    width: 82%;
+    height: 28px;
+    background: var(--brand-alpha-medium);
+}
+
+.visual {
+    min-height: 150px;
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 25% 20%, var(--brand-alpha-medium), transparent 34%),
+        linear-gradient(135deg, var(--accent-alpha-weak), var(--neutral-alpha-weak));
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 720px) {
+    .previewGrid {
+        grid-template-columns: 1fr;
+    }
+}
