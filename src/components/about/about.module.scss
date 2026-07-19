@@ -12,9 +12,40 @@
     top: var(--static-space-64);
 }
 
+.awardStack {
+    max-width: 220px;
+}
+
+.awardBadge {
+    min-height: 68px;
+    padding: var(--static-space-12);
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background: var(--surface-background);
+}
+
+.awardMark {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 44px;
+    border: 1px solid var(--brand-alpha-medium);
+    border-radius: 6px;
+    color: var(--brand-on-background-strong);
+    background: var(--brand-alpha-weak);
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
 @media (--s) {
     .avatar {
         top: auto;
+    }
+
+    .awardStack {
+        max-width: 320px;
     }
 
     .textAlign {
