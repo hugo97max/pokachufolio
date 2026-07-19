@@ -1,0 +1,7 @@
+<svg width="96" height="64" viewBox="0 0 96 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Lürzer’s Archive</title>
+  <rect width="96" height="64" rx="10" fill="#ECE8DE"/>
+  <path d="M18 16h9v25h18v8H18V16Z" fill="#111"/>
+  <path d="M53 16h8l15 33h-9l-2-6H49l-2 6h-9l15-33Zm-1 20h10l-5-12-5 12Z" fill="#111"/>
+  <path d="M18 54h60" stroke="#B43D2A" stroke-width="3" stroke-linecap="round"/>
+</svg>
