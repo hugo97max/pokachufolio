@@ -45,14 +45,14 @@ export default function WebDesign() {
         </Text>
       </Column>
 
-      <section className={styles.grid} aria-label="Diseños web prioritarios">
+      <section className={styles.grid} aria-label="Disenos web prioritarios">
         {featuredProjects.map((project) => {
           const images = webDesignAssets[project.slug]?.images ?? [];
 
           return (
             <a
               key={project.slug}
-              href={`/web-design/${project.slug}`}
+              href={`/web-design/${project.slug}/replica`}
               className={styles.card}
               style={{ "--accent": project.accent } as CSSProperties}
             >
@@ -82,7 +82,7 @@ export default function WebDesign() {
                   {project.description}
                 </Text>
                 <Text variant="label-default-s" onBackground="brand-weak">
-                  Ver reconstrucción
+                  Ver home replicado
                 </Text>
               </Column>
             </a>
@@ -97,10 +97,10 @@ export default function WebDesign() {
               Archivo pendiente
             </Text>
             <Heading as="h2" variant="heading-strong-l">
-              Sitios para recuperación histórica
+              Sitios para recuperacion historica
             </Heading>
           </Column>
-          <Button href="/web-design/importadora-ivma" variant="secondary" size="s">
+          <Button href="/web-design/importadora-ivma/replica" variant="secondary" size="s">
             Ver ejemplo activo
           </Button>
         </Flex>
@@ -108,7 +108,7 @@ export default function WebDesign() {
           {archivedProjects.map((project) => (
             <a
               key={project.slug}
-              href={`/web-design/${project.slug}`}
+              href={`/web-design/${project.slug}/replica`}
               className={styles.archiveItem}
               style={{ "--accent": project.accent } as CSSProperties}
             >
