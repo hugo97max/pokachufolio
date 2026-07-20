@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person, webDesign } from "@/app/resources/content";
+import webDesignAssets from "@/app/resources/webDesignAssets.json";
 import { webDesignProjects } from "@/app/resources/webDesignProjects";
 import styles from "./webDesign.module.scss";
 
@@ -45,48 +46,48 @@ export default function WebDesign() {
       </Column>
 
       <section className={styles.grid} aria-label="Diseños web prioritarios">
-        {featuredProjects.map((project) => (
-          <a
-            key={project.slug}
-            href={`/web-design/${project.slug}`}
-            className={styles.card}
-            style={{ "--accent": project.accent } as CSSProperties}
-          >
-            <div className={styles.browser}>
-              <Flex className={styles.browserTop} vertical="center">
-                <span className={styles.dot} />
-                <span className={styles.dot} />
-                <span className={styles.dot} />
-                <span className={styles.domain}>{project.domain}</span>
-              </Flex>
-              <div className={styles.browserHero}>
-                <span className={styles.kicker}>{project.sector}</span>
-                <strong>{project.title}</strong>
-                <span>{project.highlight}</span>
+        {featuredProjects.map((project) => {
+          const images = webDesignAssets[project.slug]?.images ?? [];
+
+          return (
+            <a
+              key={project.slug}
+              href={`/web-design/${project.slug}`}
+              className={styles.card}
+              style={{ "--accent": project.accent } as CSSProperties}
+            >
+              <div className={styles.browser} data-variant={project.variant}>
+                <Flex className={styles.browserTop} vertical="center">
+                  <span className={styles.dot} />
+                  <span className={styles.dot} />
+                  <span className={styles.dot} />
+                  <span className={styles.domain}>{project.domain}</span>
+                </Flex>
+                {images[0] && <img src={images[0]} alt="" className={styles.previewImage} loading="lazy" />}
+                <div className={styles.browserHero}>
+                  <span className={styles.kicker}>{project.sector}</span>
+                  <strong>{project.title}</strong>
+                  <span>{project.heroTitle}</span>
+                </div>
               </div>
-              <div className={styles.browserGrid}>
-                {project.sections.map((section) => (
-                  <span key={section}>{section}</span>
-                ))}
-              </div>
-            </div>
-            <Column gap="12" padding="20" className={styles.cardBody}>
-              <Flex gap="8" wrap>
-                <span className={styles.tag}>{project.status}</span>
-                <span className={styles.tag}>{project.recoverability}</span>
-              </Flex>
-              <Heading as="h2" variant="heading-strong-m">
-                {project.title}
-              </Heading>
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                {project.finding}
-              </Text>
-              <Text variant="label-default-s" onBackground="brand-weak">
-                Ver reconstrucción
-              </Text>
-            </Column>
-          </a>
-        ))}
+              <Column gap="12" padding="20" className={styles.cardBody}>
+                <Flex gap="8" wrap>
+                  <span className={styles.tag}>{project.status}</span>
+                  <span className={styles.tag}>{project.sector}</span>
+                </Flex>
+                <Heading as="h2" variant="heading-strong-m">
+                  {project.title}
+                </Heading>
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  {project.description}
+                </Text>
+                <Text variant="label-default-s" onBackground="brand-weak">
+                  Ver reconstrucción
+                </Text>
+              </Column>
+            </a>
+          );
+        })}
       </section>
 
       <Column gap="16" paddingBottom="64">
@@ -96,11 +97,11 @@ export default function WebDesign() {
               Archivo pendiente
             </Text>
             <Heading as="h2" variant="heading-strong-l">
-              Sitios para recuperacion historica
+              Sitios para recuperación histórica
             </Heading>
           </Column>
           <Button href="/web-design/importadora-ivma" variant="secondary" size="s">
-            Ver ejemplo
+            Ver ejemplo activo
           </Button>
         </Flex>
         <div className={styles.archiveGrid}>
@@ -114,9 +115,9 @@ export default function WebDesign() {
               <span className={styles.archiveMark} />
               <span>
                 <strong>{project.title}</strong>
-                <small>{project.domain}</small>
+                <small>{project.description}</small>
               </span>
-              <em>{project.level}</em>
+              <em>{project.status}</em>
             </a>
           ))}
         </div>
