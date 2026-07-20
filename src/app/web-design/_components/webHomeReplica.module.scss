@@ -1,0 +1,297 @@
+.replica {
+    width: 100%;
+    min-height: 900px;
+    overflow: hidden;
+    color: #f7f7f2;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background:
+        radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--accent) 32%, transparent), transparent 30%),
+        linear-gradient(135deg, #101010 0%, #050505 100%);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: center;
+    min-height: 96px;
+    padding: 24px clamp(24px, 5vw, 72px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+}
+
+.brand span {
+    overflow: hidden;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.brand small,
+.nav span,
+.copy p,
+.copy span,
+.actions em,
+.summary small,
+.summary strong {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.brand small,
+.nav span,
+.copy p,
+.actions strong,
+.actions em,
+.summary small {
+    font-size: 0.76rem;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+}
+
+.headerAction,
+.actions strong,
+.actions em {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 999px;
+}
+
+.headerAction,
+.actions strong {
+    color: #070707;
+    background: var(--accent);
+    font-weight: 800;
+}
+
+.home {
+    display: grid;
+    gap: clamp(32px, 5vw, 64px);
+    padding: clamp(32px, 6vw, 88px) clamp(24px, 5vw, 72px) clamp(40px, 6vw, 96px);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: center;
+    min-height: 620px;
+}
+
+.copy {
+    display: grid;
+    gap: 20px;
+}
+
+.copy p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.copy h1 {
+    max-width: 760px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: 0;
+}
+
+.copy span {
+    max-width: 620px;
+    font-size: clamp(1rem, 1.4vw, 1.35rem);
+    line-height: 1.55;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 8px;
+}
+
+.actions em {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-style: normal;
+}
+
+.media {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 560px;
+    overflow: hidden;
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 30%, transparent), transparent),
+        rgba(255, 255, 255, 0.06);
+}
+
+.media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media span {
+    padding: 40px;
+    color: color-mix(in srgb, var(--accent) 72%, #ffffff);
+    font-size: clamp(2.2rem, 6vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-align: center;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.summary article {
+    display: grid;
+    gap: 12px;
+    min-height: 160px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.summary small {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.summary strong {
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.replica[data-variant="health"],
+.replica[data-variant="medical"],
+.replica[data-variant="consulting"],
+.replica[data-variant="industrial"],
+.replica[data-variant="logistics"] {
+    color: #151515;
+    background:
+        radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 32%),
+        linear-gradient(135deg, #f9faf7 0%, #eef2ef 100%);
+}
+
+.replica[data-variant="health"] .brand span,
+.replica[data-variant="medical"] .brand span,
+.replica[data-variant="consulting"] .brand span,
+.replica[data-variant="industrial"] .brand span,
+.replica[data-variant="logistics"] .brand span,
+.replica[data-variant="health"] .copy h1,
+.replica[data-variant="medical"] .copy h1,
+.replica[data-variant="consulting"] .copy h1,
+.replica[data-variant="industrial"] .copy h1,
+.replica[data-variant="logistics"] .copy h1 {
+    color: #141414;
+}
+
+.replica[data-variant="health"] .brand small,
+.replica[data-variant="health"] .nav span,
+.replica[data-variant="health"] .copy p,
+.replica[data-variant="health"] .copy span,
+.replica[data-variant="health"] .actions em,
+.replica[data-variant="health"] .summary small,
+.replica[data-variant="health"] .summary strong,
+.replica[data-variant="medical"] .brand small,
+.replica[data-variant="medical"] .nav span,
+.replica[data-variant="medical"] .copy p,
+.replica[data-variant="medical"] .copy span,
+.replica[data-variant="medical"] .actions em,
+.replica[data-variant="medical"] .summary small,
+.replica[data-variant="medical"] .summary strong,
+.replica[data-variant="consulting"] .brand small,
+.replica[data-variant="consulting"] .nav span,
+.replica[data-variant="consulting"] .copy p,
+.replica[data-variant="consulting"] .copy span,
+.replica[data-variant="consulting"] .actions em,
+.replica[data-variant="consulting"] .summary small,
+.replica[data-variant="consulting"] .summary strong,
+.replica[data-variant="industrial"] .brand small,
+.replica[data-variant="industrial"] .nav span,
+.replica[data-variant="industrial"] .copy p,
+.replica[data-variant="industrial"] .copy span,
+.replica[data-variant="industrial"] .actions em,
+.replica[data-variant="industrial"] .summary small,
+.replica[data-variant="industrial"] .summary strong,
+.replica[data-variant="logistics"] .brand small,
+.replica[data-variant="logistics"] .nav span,
+.replica[data-variant="logistics"] .copy p,
+.replica[data-variant="logistics"] .copy span,
+.replica[data-variant="logistics"] .actions em,
+.replica[data-variant="logistics"] .summary small,
+.replica[data-variant="logistics"] .summary strong {
+    color: rgba(20, 20, 20, 0.68);
+}
+
+.replica[data-variant="health"] .summary article,
+.replica[data-variant="medical"] .summary article,
+.replica[data-variant="consulting"] .summary article,
+.replica[data-variant="industrial"] .summary article,
+.replica[data-variant="logistics"] .summary article {
+    border-color: rgba(20, 20, 20, 0.1);
+    background: rgba(255, 255, 255, 0.66);
+}
+
+@media (max-width: 1024px) {
+    .header,
+    .hero,
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 720px) {
+    .replica {
+        min-height: auto;
+    }
+
+    .header {
+        gap: 18px;
+        min-height: auto;
+    }
+
+    .home {
+        padding: 24px 18px 32px;
+    }
+
+    .copy h1 {
+        font-size: clamp(2.4rem, 16vw, 4.2rem);
+    }
+
+    .media {
+        min-height: 320px;
+    }
+}
