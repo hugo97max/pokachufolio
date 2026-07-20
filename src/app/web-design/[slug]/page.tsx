@@ -26,8 +26,8 @@ export function generateMetadata({ params }: WebDesignProjectParams) {
     return;
   }
 
-  const title = `${project.title} - Diseño Web`;
-  const description = `Reconstrucción archivada del sitio ${project.domain} dentro del portafolio web de ${person.name}.`;
+  const title = `${project.title} - Diseno Web`;
+  const description = `Reconstruccion archivada del sitio ${project.domain} dentro del portafolio web de ${person.name}.`;
 
   return {
     title,
@@ -71,10 +71,10 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
     >
       <Column maxWidth="m" gap="16">
         <Button href="/web-design" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
-          Diseños Web
+          Disenos Web
         </Button>
         <Text variant="label-default-s" onBackground="brand-weak">
-          Proyecto de portafolio / reconstrucción estática
+          Proyecto de portafolio / reconstruccion estatica
         </Text>
         <Heading variant="display-strong-s">{project.title}</Heading>
         <Text variant="heading-default-m" onBackground="neutral-weak">
@@ -95,13 +95,18 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
           </Text>
           <Text variant="body-strong-m">{project.domain}</Text>
         </Column>
-        {project.url ? (
-          <Button href={project.url} target="_blank" rel="noopener noreferrer" variant="secondary" size="s">
-            Visitar original
+        <Flex gap="8" wrap className={styles.headerActions}>
+          <Button href={`/web-design/${project.slug}/replica`} variant="secondary" size="s">
+            Ver home completo
           </Button>
-        ) : (
-          <span className={styles.archivePill}>Reconstrucción en archivo</span>
-        )}
+          {project.url ? (
+            <Button href={project.url} target="_blank" rel="noopener noreferrer" variant="secondary" size="s">
+              Visitar original
+            </Button>
+          ) : (
+            <span className={styles.archivePill}>Reconstruccion en archivo</span>
+          )}
+        </Flex>
       </div>
 
       <div className={styles.showcase} data-variant={project.variant}>
@@ -117,7 +122,7 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
             <div className={styles.brand}>
               {logo ? <img src={logo} alt="" /> : <strong>{project.title}</strong>}
             </div>
-            <nav aria-label={`Navegación reconstruida de ${project.title}`}>
+            <nav aria-label={`Navegacion reconstruida de ${project.title}`}>
               {(project.nav ?? []).slice(0, 4).map((item) => (
                 <span key={item}>{item}</span>
               ))}
@@ -153,8 +158,8 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
             </article>
             <article>
               <span />
-              <strong>Dirección visual</strong>
-              <p>Reconstrucción preparada con estructura responsive, assets optimizados y bloques estáticos editables.</p>
+              <strong>Direccion visual</strong>
+              <p>Reconstruccion preparada con estructura responsive, assets optimizados y bloques estaticos editables.</p>
             </article>
           </section>
 
@@ -171,12 +176,12 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
       <div className={styles.notesGrid}>
         <Column gap="12" padding="24" className={styles.note}>
           <Text variant="label-default-s" onBackground="neutral-weak">
-            Recuperación
+            Recuperacion
           </Text>
           <Text variant="body-default-m">
             {webDesignAssets[project.slug]?.fetched
               ? "Assets principales descargados y optimizados dentro del repositorio."
-              : "Sin assets públicos descargables todavía; queda como base editorial hasta recuperar capturas o archivos."}
+              : "Sin assets publicos descargables todavia; queda como base editorial hasta recuperar capturas o archivos."}
           </Text>
         </Column>
         <Column gap="12" padding="24" className={styles.note}>
