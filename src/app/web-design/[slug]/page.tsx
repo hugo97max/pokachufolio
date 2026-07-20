@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
+import webDesignAssets from "@/app/resources/webDesignAssets.json";
 import { webDesignProjects } from "@/app/resources/webDesignProjects";
 import styles from "./webDesignProject.module.scss";
 
@@ -26,7 +27,7 @@ export function generateMetadata({ params }: WebDesignProjectParams) {
   }
 
   const title = `${project.title} - Diseño Web`;
-  const description = `Reconstruccion archivada del sitio ${project.domain} dentro del portafolio web de ${person.name}.`;
+  const description = `Reconstrucción archivada del sitio ${project.domain} dentro del portafolio web de ${person.name}.`;
 
   return {
     title,
@@ -53,6 +54,11 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
     notFound();
   }
 
+  const images = webDesignAssets[project.slug]?.images ?? [];
+  const logo = null;
+  const heroImage = images[0];
+  const gallery = images.filter((image) => image !== logo && image !== heroImage).slice(0, 4);
+
   return (
     <Column
       as="section"
@@ -68,15 +74,37 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
           Diseños Web
         </Button>
         <Text variant="label-default-s" onBackground="brand-weak">
-          Proyecto de portafolio / reconstrucción archivada
+          Proyecto de portafolio / reconstrucción estática
         </Text>
         <Heading variant="display-strong-s">{project.title}</Heading>
         <Text variant="heading-default-m" onBackground="neutral-weak">
-          {project.highlight}
+          {project.description}
         </Text>
       </Column>
 
-      <div className={styles.showcase}>
+      <div className={styles.projectHeader}>
+        <Column gap="4">
+          <Text variant="label-default-s" onBackground="neutral-weak">
+            Estado del sitio original
+          </Text>
+          <Text variant="body-strong-m">{project.status}</Text>
+        </Column>
+        <Column gap="4">
+          <Text variant="label-default-s" onBackground="neutral-weak">
+            Dominio
+          </Text>
+          <Text variant="body-strong-m">{project.domain}</Text>
+        </Column>
+        {project.url ? (
+          <Button href={project.url} target="_blank" rel="noopener noreferrer" variant="secondary" size="s">
+            Visitar original
+          </Button>
+        ) : (
+          <span className={styles.archivePill}>Reconstrucción en archivo</span>
+        )}
+      </div>
+
+      <div className={styles.showcase} data-variant={project.variant}>
         <div className={styles.browserBar}>
           <span />
           <span />
@@ -84,82 +112,76 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
           <p>{project.domain}</p>
         </div>
 
-        <div className={styles.demo}>
-          <header className={styles.demoHeader}>
-            <strong>{project.title}</strong>
-            <nav aria-label={`Navegacion demo de ${project.title}`}>
-              {project.sections.slice(0, 4).map((section) => (
-                <span key={section}>{section}</span>
+        <div className={styles.siteReplica}>
+          <header className={styles.siteHeader}>
+            <div className={styles.brand}>
+              {logo ? <img src={logo} alt="" /> : <strong>{project.title}</strong>}
+            </div>
+            <nav aria-label={`Navegación reconstruida de ${project.title}`}>
+              {(project.nav ?? []).slice(0, 4).map((item) => (
+                <span key={item}>{item}</span>
               ))}
             </nav>
           </header>
 
-          <section className={styles.demoHero}>
-            <Column gap="12" className={styles.demoCopy}>
+          <section className={styles.siteHero}>
+            <Column gap="16" className={styles.heroCopy}>
               <Text variant="label-default-s" onBackground="brand-weak">
                 {project.sector}
               </Text>
               <Heading as="h2" variant="display-strong-m">
-                {project.title}
+                {project.heroTitle}
               </Heading>
               <Text variant="body-default-m" onBackground="neutral-weak">
                 {project.finding}
               </Text>
               <Flex gap="8" wrap>
-                <span className={styles.demoButton}>Home</span>
-                <span className={styles.demoButtonSecondary}>Contacto</span>
+                <span className={styles.primaryAction}>{project.cta}</span>
+                <span className={styles.secondaryAction}>Contacto</span>
               </Flex>
             </Column>
-            <div className={styles.visualBlock}>
-              <span />
-              <span />
-              <span />
+            <div className={styles.heroMedia}>
+              {heroImage ? <img src={heroImage} alt="" /> : <span className={styles.mediaFallback}>{project.title}</span>}
             </div>
           </section>
 
-          <section className={styles.demoSections} aria-label="Secciones de la reconstruccion">
-            {project.sections.map((section) => (
-              <article key={section}>
-                <span />
-                <strong>{section}</strong>
-                <p>Modulo base preparado para reemplazar con textos, capturas y assets recuperados.</p>
-              </article>
-            ))}
+          <section className={styles.contentStrip}>
+            <article>
+              <span />
+              <strong>{project.highlight}</strong>
+              <p>{project.description}</p>
+            </article>
+            <article>
+              <span />
+              <strong>Dirección visual</strong>
+              <p>Reconstrucción preparada con estructura responsive, assets optimizados y bloques estáticos editables.</p>
+            </article>
           </section>
-        </div>
-      </div>
 
-      <div className={styles.metaGrid}>
-        <Column gap="8" className={styles.metaCard}>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Estado inicial
-          </Text>
-          <Text variant="body-strong-m">{project.status}</Text>
-        </Column>
-        <Column gap="8" className={styles.metaCard}>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Recuperabilidad
-          </Text>
-          <Text variant="body-strong-m">{project.recoverability}</Text>
-        </Column>
-        <Column gap="8" className={styles.metaCard}>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Criterio de fidelidad
-          </Text>
-          <Text variant="body-strong-m">{project.level}</Text>
-        </Column>
+          {gallery.length > 0 && (
+            <section className={styles.gallery} aria-label={`Assets recuperados de ${project.title}`}>
+              {gallery.map((image) => (
+                <img key={image} src={image} alt="" loading="lazy" />
+              ))}
+            </section>
+          )}
+        </div>
       </div>
 
       <div className={styles.notesGrid}>
         <Column gap="12" padding="24" className={styles.note}>
           <Text variant="label-default-s" onBackground="neutral-weak">
-            Hallazgo
+            Recuperación
           </Text>
-          <Text variant="body-default-m">{project.finding}</Text>
+          <Text variant="body-default-m">
+            {webDesignAssets[project.slug]?.fetched
+              ? "Assets principales descargados y optimizados dentro del repositorio."
+              : "Sin assets públicos descargables todavía; queda como base editorial hasta recuperar capturas o archivos."}
+          </Text>
         </Column>
         <Column gap="12" padding="24" className={styles.note}>
           <Text variant="label-default-s" onBackground="neutral-weak">
-            Siguiente accion
+            Siguiente ajuste
           </Text>
           <Text variant="body-default-m">{project.nextAction}</Text>
         </Column>
