@@ -20,6 +20,10 @@
     font-size: 0.82rem;
 }
 
+.headerActions {
+    justify-content: flex-end;
+}
+
 .showcase {
     overflow: hidden;
     border: 1px solid var(--neutral-alpha-medium);
@@ -284,6 +288,10 @@
 @media (max-width: 720px) {
     .projectHeader {
         align-items: stretch;
+    }
+
+    .headerActions {
+        justify-content: flex-start;
     }
 
     .siteReplica {
