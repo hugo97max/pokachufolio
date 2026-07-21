@@ -1,15 +1,42 @@
 import styles from "./destileriaHomeReplica.module.scss";
 
 const clientLogos = [
-  "delirio",
-  "veris",
-  "calbaq",
-  "renteco",
-  "faber",
-  "poly",
-  "comsucre",
-  "umet",
-  "foodgarden",
+  {
+    name: "Delirio",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-45.svg",
+  },
+  {
+    name: "Veris",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-47.svg",
+  },
+  {
+    name: "Calbaq",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-46.svg",
+  },
+  {
+    name: "Renteco",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-49.svg",
+  },
+  {
+    name: "Faber Castell",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-50.svg",
+  },
+  {
+    name: "Poly Ugarte",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-51.svg",
+  },
+  {
+    name: "Comsucre",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-52.svg",
+  },
+  {
+    name: "UMET",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-54.svg",
+  },
+  {
+    name: "Food Garden",
+    src: "https://destileria.ec/wp-content/uploads/2025/07/Mark-55.svg",
+  },
 ];
 
 const works = [
@@ -46,74 +73,6 @@ function DestileriaLogo() {
       loading="eager"
     />
   );
-}
-
-function ClientLogo({ name }: { name: string }) {
-  switch (name) {
-    case "delirio":
-      return (
-        <svg viewBox="0 0 150 42" role="img" aria-label="Delirio">
-          <path d="M9 33c15-21 30-27 45-18 7 4 8 12 2 17-8 7-22 5-36-4" />
-          <text x="47" y="28">Delirio</text>
-        </svg>
-      );
-    case "veris":
-      return (
-        <svg viewBox="0 0 130 42" role="img" aria-label="veris">
-          <text x="8" y="28">veris</text>
-          <path d="M83 25l11 8 25-24" />
-        </svg>
-      );
-    case "calbaq":
-      return (
-        <svg viewBox="0 0 150 42" role="img" aria-label="calbaq">
-          <circle cx="24" cy="21" r="13" />
-          <text x="44" y="28">calbaq</text>
-        </svg>
-      );
-    case "renteco":
-      return (
-        <svg viewBox="0 0 170 42" role="img" aria-label="Renteco">
-          <rect x="8" y="11" width="29" height="20" rx="2" />
-          <text x="46" y="28">RENTECO</text>
-        </svg>
-      );
-    case "faber":
-      return (
-        <svg viewBox="0 0 170 42" role="img" aria-label="Faber Castell">
-          <path d="M14 30l16-18 16 18" />
-          <text x="54" y="27">Faber Castell</text>
-        </svg>
-      );
-    case "poly":
-      return (
-        <svg viewBox="0 0 155 42" role="img" aria-label="Poly Ugarte">
-          <rect x="10" y="9" width="132" height="25" rx="2" />
-          <text x="22" y="27">Poly Ugarte</text>
-        </svg>
-      );
-    case "comsucre":
-      return (
-        <svg viewBox="0 0 170 42" role="img" aria-label="Comsucre">
-          <path d="M16 13h18v18H16zM38 13h18v18H38z" />
-          <text x="65" y="28">COMSUCRE</text>
-        </svg>
-      );
-    case "umet":
-      return (
-        <svg viewBox="0 0 140 42" role="img" aria-label="UMET">
-          <text x="7" y="31">UMET</text>
-          <text x="10" y="39" className={styles.logoSubline}>Universidad</text>
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 150 42" role="img" aria-label="Food Garden">
-          <path d="M74 7l8 16 18 3-13 12 3 17-16-8-16 8 3-17-13-12 18-3 8-16Z" />
-          <text x="18" y="34">FOOD GARDEN</text>
-        </svg>
-      );
-  }
 }
 
 export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProps) {
@@ -183,8 +142,8 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
 
       <section className={styles.logoStrip} aria-label="Marcas clientes">
         {clientLogos.map((brand) => (
-          <span key={brand} className={styles.clientLogo}>
-            <ClientLogo name={brand} />
+          <span key={brand.name} className={styles.clientLogo}>
+            <img src={brand.src} alt={`Logo blanco de la marca ${brand.name}`} loading="lazy" />
           </span>
         ))}
       </section>
