@@ -39,11 +39,12 @@ interface DestileriaHomeReplicaProps {
 
 function DestileriaLogo() {
   return (
-    <svg className={styles.destileriaLogo} viewBox="0 0 238 52" role="img" aria-label="Destileria">
-      <path d="M24 5c15 0 24 8 24 21S39 47 24 47H7V5h17Zm-5 9v24h5c7 0 12-4 12-12S31 14 24 14h-5Z" />
-      <path d="M61 14h29v7H72v6h15v7H72v6h19v7H61V14Zm37 0h11v33H98V14Zm17 0h11v24h17v9h-28V14Zm34 0h11v33h-11V14Zm18 0h20c9 0 15 5 15 13 0 5-2 9-7 11l9 9h-13l-7-8h-6v8h-11V14Zm11 8v9h8c3 0 5-2 5-5s-2-4-5-4h-8Zm32-8h31v8h-10v25h-11V22h-10v-8Z" />
-      <path d="M51 6h5v40h-5V6Zm-34 43h20v-4H17v4Zm99-43h20v4h-20V6Z" />
-    </svg>
+    <img
+      className={styles.destileriaLogo}
+      src="/images/web-design/destileria/logo.svg"
+      alt="Destileria"
+      loading="eager"
+    />
   );
 }
 
@@ -208,7 +209,7 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
           Marcas que ya se <mark>sirvieron un trago</mark>
         </h2>
         <div className={styles.workGrid}>
-          {works.map(([client, title]) => (
+          {works.map(([client, title], index) => (
             <article key={title} className={styles.workCard}>
               {poster ? <img src={poster} alt="" loading="lazy" /> : <span className={styles.cardFallback}>{title}</span>}
               <small>Cliente {client}</small>
@@ -230,7 +231,7 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
           </p>
         </div>
         <div className={styles.academyGrid}>
-          {academy.map((title) => (
+          {academy.map((title, index) => (
             <article key={title}>
               {poster ? <img src={poster} alt="" loading="lazy" /> : <span className={styles.cardFallback}>Intensivos</span>}
               <small>Intensivos</small>
