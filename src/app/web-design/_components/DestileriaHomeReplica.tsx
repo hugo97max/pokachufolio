@@ -1,6 +1,16 @@
 import styles from "./destileriaHomeReplica.module.scss";
 
-const brandLogos = ["Delirio", "veris", "calbaq", "RENTECO", "Faber Castell", "Poly Ugarte", "COMSUCRE", "UMET", "FOOD GARDEN"];
+const clientLogos = [
+  "delirio",
+  "veris",
+  "calbaq",
+  "renteco",
+  "faber",
+  "poly",
+  "comsucre",
+  "umet",
+  "foodgarden",
+];
 
 const works = [
   ["Alprecio", "No le regales cualquier huev***"],
@@ -25,6 +35,84 @@ const shots = [
 
 interface DestileriaHomeReplicaProps {
   images?: string[];
+}
+
+function DestileriaLogo() {
+  return (
+    <svg className={styles.destileriaLogo} viewBox="0 0 238 52" role="img" aria-label="Destileria">
+      <path d="M24 5c15 0 24 8 24 21S39 47 24 47H7V5h17Zm-5 9v24h5c7 0 12-4 12-12S31 14 24 14h-5Z" />
+      <path d="M61 14h29v7H72v6h15v7H72v6h19v7H61V14Zm37 0h11v33H98V14Zm17 0h11v24h17v9h-28V14Zm34 0h11v33h-11V14Zm18 0h20c9 0 15 5 15 13 0 5-2 9-7 11l9 9h-13l-7-8h-6v8h-11V14Zm11 8v9h8c3 0 5-2 5-5s-2-4-5-4h-8Zm32-8h31v8h-10v25h-11V22h-10v-8Z" />
+      <path d="M51 6h5v40h-5V6Zm-34 43h20v-4H17v4Zm99-43h20v4h-20V6Z" />
+    </svg>
+  );
+}
+
+function ClientLogo({ name }: { name: string }) {
+  switch (name) {
+    case "delirio":
+      return (
+        <svg viewBox="0 0 150 42" role="img" aria-label="Delirio">
+          <path d="M9 33c15-21 30-27 45-18 7 4 8 12 2 17-8 7-22 5-36-4" />
+          <text x="47" y="28">Delirio</text>
+        </svg>
+      );
+    case "veris":
+      return (
+        <svg viewBox="0 0 130 42" role="img" aria-label="veris">
+          <text x="8" y="28">veris</text>
+          <path d="M83 25l11 8 25-24" />
+        </svg>
+      );
+    case "calbaq":
+      return (
+        <svg viewBox="0 0 150 42" role="img" aria-label="calbaq">
+          <circle cx="24" cy="21" r="13" />
+          <text x="44" y="28">calbaq</text>
+        </svg>
+      );
+    case "renteco":
+      return (
+        <svg viewBox="0 0 170 42" role="img" aria-label="Renteco">
+          <rect x="8" y="11" width="29" height="20" rx="2" />
+          <text x="46" y="28">RENTECO</text>
+        </svg>
+      );
+    case "faber":
+      return (
+        <svg viewBox="0 0 170 42" role="img" aria-label="Faber Castell">
+          <path d="M14 30l16-18 16 18" />
+          <text x="54" y="27">Faber Castell</text>
+        </svg>
+      );
+    case "poly":
+      return (
+        <svg viewBox="0 0 155 42" role="img" aria-label="Poly Ugarte">
+          <rect x="10" y="9" width="132" height="25" rx="2" />
+          <text x="22" y="27">Poly Ugarte</text>
+        </svg>
+      );
+    case "comsucre":
+      return (
+        <svg viewBox="0 0 170 42" role="img" aria-label="Comsucre">
+          <path d="M16 13h18v18H16zM38 13h18v18H38z" />
+          <text x="65" y="28">COMSUCRE</text>
+        </svg>
+      );
+    case "umet":
+      return (
+        <svg viewBox="0 0 140 42" role="img" aria-label="UMET">
+          <text x="7" y="31">UMET</text>
+          <text x="10" y="39" className={styles.logoSubline}>Universidad</text>
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 150 42" role="img" aria-label="Food Garden">
+          <path d="M74 7l8 16 18 3-13 12 3 17-16-8-16 8 3-17-13-12 18-3 8-16Z" />
+          <text x="18" y="34">FOOD GARDEN</text>
+        </svg>
+      );
+  }
 }
 
 export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProps) {
@@ -55,7 +143,7 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
     <article className={styles.destileria} data-replica-root="destileria">
       <header className={styles.header}>
         <a className={styles.logo} href="/web-design/destileria/replica" aria-label="Destileria replica">
-          Destileria
+          <DestileriaLogo />
         </a>
         <nav aria-label="Menu Destileria">
           <span>Trabajos</span>
@@ -93,8 +181,10 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
       </section>
 
       <section className={styles.logoStrip} aria-label="Marcas clientes">
-        {brandLogos.map((brand) => (
-          <span key={brand}>{brand}</span>
+        {clientLogos.map((brand) => (
+          <span key={brand} className={styles.clientLogo}>
+            <ClientLogo name={brand} />
+          </span>
         ))}
       </section>
 
@@ -175,7 +265,7 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
 
       <footer className={styles.footer}>
         <div>
-          <strong>Destileria</strong>
+          <DestileriaLogo />
           <p>Agencia creativa que mezcla estrategia, contenido y cultura pop para servir campanas que embriagan al mercado.</p>
           <a>Agenda tu trago creativo</a>
         </div>
