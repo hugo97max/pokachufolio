@@ -2,6 +2,8 @@
 
 .destileria {
     --gold: #c9a968;
+    --fire: #e86f1d;
+    --teal: #18c0c8;
     --ink: #020202;
     --white: #f8f8f2;
     --display: "Barlow Condensed", "Anton", Impact, "Arial Narrow", sans-serif;
@@ -15,6 +17,10 @@
     background: var(--ink);
     font-family: var(--body);
     letter-spacing: 0;
+}
+
+.destileria :where(img, video) {
+    max-width: 100%;
 }
 
 .destileria a {
@@ -86,14 +92,53 @@
     min-height: clamp(420px, 42vw, 620px);
     overflow: hidden;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    isolation: isolate;
+}
+
+.featured::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+    background:
+        linear-gradient(90deg, rgba(2, 2, 2, 0.98) 0%, rgba(2, 2, 2, 0.82) 38%, rgba(2, 2, 2, 0.24) 100%),
+        linear-gradient(0deg, rgba(2, 2, 2, 0.78) 0%, transparent 42%);
+}
+
+.heroAmbient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.44;
+}
+
+.heroAmbient img {
+    position: absolute;
+    inset: -4%;
+    width: 108%;
+    height: 108%;
+    object-fit: cover;
+    transform: scale(1.04);
+    filter: saturate(1.2) contrast(1.05) blur(1px);
+    animation: ambientShift 20s ease-in-out infinite alternate;
+}
+
+.heroAmbient img:nth-child(2) {
+    opacity: 0.34;
+    mix-blend-mode: screen;
+    animation-delay: -9s;
 }
 
 .featuredTrack {
+    position: relative;
+    z-index: 2;
     display: flex;
-    width: 300%;
+    width: 600%;
     height: 100%;
     min-height: inherit;
-    animation: featuredCarousel 18s infinite;
+    animation: featuredCarousel 30s infinite;
 }
 
 .featured:hover .featuredTrack {
@@ -104,18 +149,19 @@
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
     align-items: end;
-    width: 33.333%;
+    width: 16.666%;
     min-height: inherit;
     padding: 0 clamp(36px, 7vw, 160px) 0 clamp(36px, 7vw, 160px);
     background:
-        linear-gradient(90deg, #020202 0%, #020202 55%, rgba(2, 2, 2, 0.28) 100%),
-        radial-gradient(circle at 80% 48%, rgba(201, 169, 104, 0.12), transparent 28%);
+        radial-gradient(circle at 78% 24%, rgba(232, 111, 29, 0.24), transparent 24%),
+        radial-gradient(circle at 90% 72%, rgba(24, 192, 200, 0.15), transparent 26%);
 }
 
 .featuredCopy {
     display: grid;
     gap: 10px;
     padding-bottom: clamp(42px, 8vw, 112px);
+    animation: copyLift 900ms ease both;
 }
 
 .featuredCopy h1 {
@@ -124,6 +170,7 @@
     color: var(--white);
     font-size: clamp(2.4rem, 5.6vw, 7.6rem);
     line-height: 0.82;
+    text-shadow: 0 18px 64px rgba(0, 0, 0, 0.52);
 }
 
 .featuredCopy a,
@@ -151,7 +198,27 @@
     min-height: clamp(150px, 17vw, 260px);
     margin-bottom: clamp(38px, 7vw, 92px);
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
     background: #181818;
+    box-shadow: 0 34px 90px rgba(0, 0, 0, 0.48);
+    transform: rotate(-1.2deg);
+    animation: mediaFloat 5.8s ease-in-out infinite;
+}
+
+.videoFrame::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+    background:
+        linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.18) 32%, transparent 44%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, transparent 38%);
+    mix-blend-mode: screen;
+    opacity: 0.42;
+    transform: translateX(-70%);
+    animation: lightSweep 6s ease-in-out infinite;
 }
 
 .videoFrame video,
@@ -162,6 +229,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.videoFrame img {
+    transform: scale(1.04);
+    animation: slowZoom 12s ease-in-out infinite alternate;
 }
 
 .videoPlaceholder,
@@ -184,6 +256,7 @@
 
 .videoFrame span {
     position: absolute;
+    z-index: 2;
     right: 10%;
     bottom: 22%;
     color: var(--white);
@@ -216,6 +289,12 @@
     max-width: 132px;
     max-height: 42px;
     object-fit: contain;
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.clientLogo:hover img {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.04);
 }
 
 .intro,
@@ -277,13 +356,44 @@
 }
 
 .workCard {
+    position: relative;
     display: grid;
     gap: 8px;
+    transition: transform 260ms ease, filter 260ms ease;
+}
+
+.workCard::after,
+.academy article::after,
+.shots article::after {
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    opacity: 0;
+    transition: opacity 260ms ease;
 }
 
 .workCard img {
     aspect-ratio: 1.9 / 1;
     background: #101010;
+    transition: transform 360ms ease, filter 360ms ease;
+}
+
+.workCard:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 26px 42px rgba(0, 0, 0, 0.4));
+}
+
+.workCard:hover img {
+    transform: scale(1.035);
+    filter: saturate(1.12) contrast(1.04);
+}
+
+.workCard:hover::after,
+.academy article:hover::after,
+.shots article:hover::after {
+    opacity: 1;
 }
 
 .workCard h3,
@@ -326,13 +436,29 @@
 
 .academy article,
 .shots article {
+    position: relative;
     display: grid;
     gap: 8px;
+    overflow: hidden;
+    transition: transform 260ms ease, filter 260ms ease;
 }
 
 .academy article img {
     aspect-ratio: 1.62 / 1;
     border-radius: 4px;
+    transition: transform 360ms ease, filter 360ms ease;
+}
+
+.academy article:hover,
+.shots article:hover {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.36));
+}
+
+.academy article:hover img,
+.shots article:hover img {
+    transform: scale(1.045);
+    filter: saturate(1.12) contrast(1.05);
 }
 
 .academy > a {
@@ -353,6 +479,11 @@
 .shots article img {
     aspect-ratio: 1.88 / 1;
     filter: grayscale(1);
+    transition: transform 360ms ease, filter 360ms ease;
+}
+
+.shots article:hover img {
+    filter: grayscale(0) saturate(1.12) contrast(1.04);
 }
 
 .ticker {
@@ -413,19 +544,81 @@
 
 @keyframes featuredCarousel {
     0%,
-    28% {
+    13% {
         transform: translateX(0);
     }
+    17%,
+    30% {
+        transform: translateX(-16.666%);
+    }
     34%,
-    62% {
+    47% {
         transform: translateX(-33.333%);
     }
+    51%,
+    64% {
+        transform: translateX(-49.999%);
+    }
     68%,
-    96% {
+    81% {
         transform: translateX(-66.666%);
+    }
+    85%,
+    97% {
+        transform: translateX(-83.333%);
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes ambientShift {
+    from {
+        transform: scale(1.04) translate3d(-1%, 0, 0);
+    }
+    to {
+        transform: scale(1.12) translate3d(2%, -1%, 0);
+    }
+}
+
+@keyframes copyLift {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mediaFloat {
+    0%,
+    100% {
+        transform: rotate(-1.2deg) translateY(0);
+    }
+    50% {
+        transform: rotate(0.5deg) translateY(-10px);
+    }
+}
+
+@keyframes lightSweep {
+    0%,
+    42% {
+        transform: translateX(-70%);
+    }
+    60%,
+    100% {
+        transform: translateX(80%);
+    }
+}
+
+@keyframes slowZoom {
+    from {
+        transform: scale(1.04);
+    }
+    to {
+        transform: scale(1.12);
     }
 }
 
@@ -463,10 +656,23 @@
         padding: 48px 24px;
     }
 
+    .featuredTrack {
+        width: 600%;
+    }
+
+    .featuredSlide {
+        width: 16.666%;
+    }
+
     .featuredCopy,
     .videoFrame {
         margin: 0;
         padding-bottom: 0;
+    }
+
+    .videoFrame {
+        transform: none;
+        animation: none;
     }
 
     .logoStrip {
