@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { DestileriaHomeReplica } from "./DestileriaHomeReplica";
 import styles from "./webHomeReplica.module.scss";
 
 interface WebDesignProject {
@@ -23,6 +24,10 @@ interface WebHomeReplicaProps {
 }
 
 export function WebHomeReplica({ project, images = [] }: WebHomeReplicaProps) {
+  if (project.slug === "destileria") {
+    return <DestileriaHomeReplica images={images} />;
+  }
+
   const heroImage = images[0];
   const navItems = (project.nav ?? []).slice(0, 5);
 
