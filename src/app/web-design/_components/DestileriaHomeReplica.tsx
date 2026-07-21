@@ -43,64 +43,66 @@ const works = [
   {
     client: "Alprecio",
     title: "No le regales cualquier huev***",
-    image: "/images/web-design/destileria/work-no-le-regales.webp",
+    image: "",
   },
   {
     client: "Maxell",
     title: "Distracted",
-    image: "/images/web-design/destileria/work-distracted.webp",
+    image: "",
   },
   {
     client: "Motorscorp",
     title: "La Mama de las Chaquetas",
-    image: "/images/web-design/destileria/work-mama-chaquetas.webp",
+    image: "",
   },
   {
     client: "Maxell",
     title: "Underwater",
-    image: "/images/web-design/destileria/work-underwater.webp",
+    image: "",
   },
   {
     client: "LaGanga",
     title: "Manual de Equidad en el Hogar #8M",
-    image: "/images/web-design/destileria/work-manual-equidad.webp",
+    image: "",
   },
   {
     client: "LaGanga",
     title: "Descuento de por vida",
-    image: "/images/web-design/destileria/work-descuento-vida.webp",
+    image: "",
   },
 ];
 
 const academy = [
   {
     title: "Crea campanas con intencion de compra, optimiza con data real y escala con smart bidding.",
-    image: "/images/web-design/destileria/academy-google-ads.webp",
+    image: "",
   },
   {
     title: "Domina TikTok y crea anuncios que se sienta como contenido organico que vende como locos.",
-    image: "/images/web-design/destileria/academy-tiktok-ads.webp",
+    image: "",
   },
   {
     title: "Disena y escala campanas de alto rendimiento dominando Meta Business desde el primer clic.",
-    image: "/images/web-design/destileria/academy-meta-ads.webp",
+    image: "",
   },
 ];
 
 const shots = [
   {
     title: "Antonio Jimenez, el arte de destilar ideas embriagantes",
-    image: "/images/web-design/destileria/shot-antonio.webp",
+    image: "",
   },
   {
     title: "La Destileria Creativa / Antonio Jimenez: Destilando las ideas",
-    image: "/images/web-design/destileria/shot-destilando.webp",
+    image: "",
   },
   {
     title: "MRStrategy / Monica Rumbea: Agregar valor a las ideas de negocio",
-    image: "/images/web-design/destileria/shot-monica.webp",
+    image: "",
   },
 ];
+
+const logoMarqueeGroups = [clientLogos, clientLogos];
 
 interface DestileriaHomeReplicaProps {
   images?: string[];
@@ -118,47 +120,49 @@ function DestileriaLogo() {
 }
 
 export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeReplicaProps) {
+  const fallbackImage = _images[0] ?? "";
+
   const featuredSlides = [
     {
       client: "Motorscorp",
       title: "La Mama de las Chaquetas",
       count: "1 of 6",
-      image: "/images/web-design/destileria/work-mama-chaquetas.webp",
+      image: fallbackImage,
       eyebrow: "Brand experience",
     },
     {
       client: "Al Precio",
       title: "No le regales cualquier huev***",
       count: "2 of 6",
-      image: "/images/web-design/destileria/work-no-le-regales.webp",
+      image: fallbackImage,
       eyebrow: "Retail campaign",
     },
     {
       client: "Maxell",
       title: "Distracted",
       count: "3 of 6",
-      image: "https://destileria.ec/wp-content/uploads/2025/07/distracted.gif",
+      image: fallbackImage,
       eyebrow: "Animated key visual",
     },
     {
       client: "Maxell",
       title: "Underwater",
       count: "4 of 6",
-      image: "https://destileria.ec/wp-content/uploads/2025/07/Underwater-Gif.gif",
+      image: fallbackImage,
       eyebrow: "Motion feature",
     },
     {
       client: "La Ganga",
       title: "Manual de Equidad en el Hogar #8M",
       count: "5 of 6",
-      image: "/images/web-design/destileria/work-manual-equidad.webp",
+      image: fallbackImage,
       eyebrow: "Content system",
     },
     {
       client: "La Ganga",
       title: "Descuento de por vida",
       count: "6 of 6",
-      image: "/images/web-design/destileria/work-descuento-vida.webp",
+      image: fallbackImage,
       eyebrow: "Promotion",
     },
   ];
@@ -180,8 +184,8 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
 
       <section className={styles.featured} aria-label="Featured carousel">
         <div className={styles.heroAmbient} aria-hidden="true">
-          <img src="/images/web-design/destileria/asset-05.webp" alt="" />
-          <img src="/images/web-design/destileria/hero.webp" alt="" />
+          {fallbackImage && <img src={fallbackImage} alt="" />}
+          {fallbackImage && <img src={fallbackImage} alt="" />}
         </div>
         <div className={styles.featuredTrack}>
           {featuredSlides.map((slide) => (
@@ -205,11 +209,17 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
       </section>
 
       <section className={styles.logoStrip} aria-label="Marcas clientes">
-        {clientLogos.map((brand) => (
-          <span key={brand.name} className={styles.clientLogo}>
-            <img src={brand.src} alt={`Logo blanco de la marca ${brand.name}`} loading="lazy" />
-          </span>
-        ))}
+        <div className={styles.logoMarquee}>
+          {logoMarqueeGroups.map((group, groupIndex) => (
+            <div className={styles.logoGroup} key={`logos-${groupIndex}`} aria-hidden={groupIndex > 0 ? "true" : undefined}>
+              {group.map((brand) => (
+                <span key={`${brand.name}-${groupIndex}`} className={styles.clientLogo}>
+                  <img src={brand.src} alt={`Logo blanco de la marca ${brand.name}`} loading="lazy" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className={styles.intro}>
@@ -234,7 +244,11 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
         <div className={styles.workGrid}>
           {works.map((work) => (
             <article key={work.title} className={styles.workCard}>
-              <img src={work.image} alt="" loading="lazy" />
+              {work.image || fallbackImage ? (
+                <img src={work.image || fallbackImage} alt="" loading="lazy" />
+              ) : (
+                <span className={styles.cardFallback}>{work.title}</span>
+              )}
               <small>Cliente {work.client}</small>
               <h3>{work.title}</h3>
             </article>
@@ -256,7 +270,11 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
         <div className={styles.academyGrid}>
           {academy.map((course) => (
             <article key={course.title}>
-              <img src={course.image} alt="" loading="lazy" />
+              {course.image || fallbackImage ? (
+                <img src={course.image || fallbackImage} alt="" loading="lazy" />
+              ) : (
+                <span className={styles.cardFallback}>Intensivos</span>
+              )}
               <small>Intensivos</small>
               <h3>{course.title}</h3>
             </article>
@@ -272,7 +290,11 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
         <div className={styles.shotGrid}>
           {shots.map((shot) => (
             <article key={shot.title}>
-              <img src={shot.image} alt="" loading="lazy" />
+              {shot.image || fallbackImage ? (
+                <img src={shot.image || fallbackImage} alt="" loading="lazy" />
+              ) : (
+                <span className={styles.cardFallback}>Prensa</span>
+              )}
               <small>Prensa</small>
               <h3>{shot.title}</h3>
             </article>
