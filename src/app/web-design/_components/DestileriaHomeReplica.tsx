@@ -40,24 +40,66 @@ const clientLogos = [
 ];
 
 const works = [
-  ["Alprecio", "No le regales cualquier huev***"],
-  ["Maxell", "Distracted"],
-  ["Motorscorp", "La Mama de las Chaquetas"],
-  ["Maxell", "Underwater"],
-  ["LaGanga", "Manual de Equidad en el Hogar #8M"],
-  ["LaGanga", "Descuento de por vida"],
+  {
+    client: "Alprecio",
+    title: "No le regales cualquier huev***",
+    image: "/images/web-design/destileria/work-no-le-regales.webp",
+  },
+  {
+    client: "Maxell",
+    title: "Distracted",
+    image: "/images/web-design/destileria/work-distracted.webp",
+  },
+  {
+    client: "Motorscorp",
+    title: "La Mama de las Chaquetas",
+    image: "/images/web-design/destileria/work-mama-chaquetas.webp",
+  },
+  {
+    client: "Maxell",
+    title: "Underwater",
+    image: "/images/web-design/destileria/work-underwater.webp",
+  },
+  {
+    client: "LaGanga",
+    title: "Manual de Equidad en el Hogar #8M",
+    image: "/images/web-design/destileria/work-manual-equidad.webp",
+  },
+  {
+    client: "LaGanga",
+    title: "Descuento de por vida",
+    image: "/images/web-design/destileria/work-descuento-vida.webp",
+  },
 ];
 
 const academy = [
-  "Crea campanas con intencion de compra, optimiza con data real y escala con smart bidding.",
-  "Domina TikTok y crea anuncios que se sienta como contenido organico que vende como locos.",
-  "Disena y escala campanas de alto rendimiento dominando Meta Business desde el primer clic.",
+  {
+    title: "Crea campanas con intencion de compra, optimiza con data real y escala con smart bidding.",
+    image: "/images/web-design/destileria/academy-google-ads.webp",
+  },
+  {
+    title: "Domina TikTok y crea anuncios que se sienta como contenido organico que vende como locos.",
+    image: "/images/web-design/destileria/academy-tiktok-ads.webp",
+  },
+  {
+    title: "Disena y escala campanas de alto rendimiento dominando Meta Business desde el primer clic.",
+    image: "/images/web-design/destileria/academy-meta-ads.webp",
+  },
 ];
 
 const shots = [
-  "Antonio Jimenez, el arte de destilar ideas embriagantes",
-  "La Destileria Creativa / Antonio Jimenez: Destilando las ideas",
-  "MRStrategy / Monica Rumbea: Agregar valor a las ideas de negocio",
+  {
+    title: "Antonio Jimenez, el arte de destilar ideas embriagantes",
+    image: "/images/web-design/destileria/shot-antonio.webp",
+  },
+  {
+    title: "La Destileria Creativa / Antonio Jimenez: Destilando las ideas",
+    image: "/images/web-design/destileria/shot-destilando.webp",
+  },
+  {
+    title: "MRStrategy / Monica Rumbea: Agregar valor a las ideas de negocio",
+    image: "/images/web-design/destileria/shot-monica.webp",
+  },
 ];
 
 interface DestileriaHomeReplicaProps {
@@ -75,27 +117,49 @@ function DestileriaLogo() {
   );
 }
 
-export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProps) {
-  const poster = images[0];
+export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeReplicaProps) {
   const featuredSlides = [
-    {
-      client: "La Ganga",
-      title: "Preview San Valentin",
-      count: "1 of 6",
-      poster,
-      video: "/videos/web-design/destileria/preview-san-valentin.mp4",
-    },
     {
       client: "Motorscorp",
       title: "La Mama de las Chaquetas",
+      count: "1 of 6",
+      image: "/images/web-design/destileria/work-mama-chaquetas.webp",
+      eyebrow: "Brand experience",
+    },
+    {
+      client: "Al Precio",
+      title: "No le regales cualquier huev***",
       count: "2 of 6",
-      poster,
+      image: "/images/web-design/destileria/work-no-le-regales.webp",
+      eyebrow: "Retail campaign",
     },
     {
       client: "Maxell",
       title: "Distracted",
       count: "3 of 6",
-      poster,
+      image: "https://destileria.ec/wp-content/uploads/2025/07/distracted.gif",
+      eyebrow: "Animated key visual",
+    },
+    {
+      client: "Maxell",
+      title: "Underwater",
+      count: "4 of 6",
+      image: "https://destileria.ec/wp-content/uploads/2025/07/Underwater-Gif.gif",
+      eyebrow: "Motion feature",
+    },
+    {
+      client: "La Ganga",
+      title: "Manual de Equidad en el Hogar #8M",
+      count: "5 of 6",
+      image: "/images/web-design/destileria/work-manual-equidad.webp",
+      eyebrow: "Content system",
+    },
+    {
+      client: "La Ganga",
+      title: "Descuento de por vida",
+      count: "6 of 6",
+      image: "/images/web-design/destileria/work-descuento-vida.webp",
+      eyebrow: "Promotion",
     },
   ];
 
@@ -115,21 +179,21 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
       </header>
 
       <section className={styles.featured} aria-label="Featured carousel">
+        <div className={styles.heroAmbient} aria-hidden="true">
+          <img src="/images/web-design/destileria/asset-05.webp" alt="" />
+          <img src="/images/web-design/destileria/hero.webp" alt="" />
+        </div>
         <div className={styles.featuredTrack}>
           {featuredSlides.map((slide) => (
             <article className={styles.featuredSlide} key={slide.title}>
               <div className={styles.featuredCopy}>
-                <small>Cliente {slide.client}</small>
+                <small>{slide.eyebrow} / Cliente {slide.client}</small>
                 <h1>{slide.title}</h1>
                 <a>Ver mas</a>
               </div>
               <div className={styles.videoFrame}>
-                {slide.video ? (
-                  <video poster={slide.poster} muted autoPlay loop playsInline preload="metadata">
-                    <source src={slide.video} type="video/mp4" />
-                  </video>
-                ) : slide.poster ? (
-                  <img src={slide.poster} alt="" />
+                {slide.image ? (
+                  <img src={slide.image} alt="" loading={slide.count === "1 of 6" ? "eager" : "lazy"} />
                 ) : (
                   <span className={styles.videoPlaceholder}>{slide.title}</span>
                 )}
@@ -168,11 +232,11 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
           Marcas que ya se <mark>sirvieron un trago</mark>
         </h2>
         <div className={styles.workGrid}>
-          {works.map(([client, title], index) => (
-            <article key={title} className={styles.workCard}>
-              {poster ? <img src={poster} alt="" loading="lazy" /> : <span className={styles.cardFallback}>{title}</span>}
-              <small>Cliente {client}</small>
-              <h3>{title}</h3>
+          {works.map((work) => (
+            <article key={work.title} className={styles.workCard}>
+              <img src={work.image} alt="" loading="lazy" />
+              <small>Cliente {work.client}</small>
+              <h3>{work.title}</h3>
             </article>
           ))}
         </div>
@@ -190,11 +254,11 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
           </p>
         </div>
         <div className={styles.academyGrid}>
-          {academy.map((title, index) => (
-            <article key={title}>
-              {poster ? <img src={poster} alt="" loading="lazy" /> : <span className={styles.cardFallback}>Intensivos</span>}
+          {academy.map((course) => (
+            <article key={course.title}>
+              <img src={course.image} alt="" loading="lazy" />
               <small>Intensivos</small>
-              <h3>{title}</h3>
+              <h3>{course.title}</h3>
             </article>
           ))}
         </div>
@@ -206,11 +270,11 @@ export function DestileriaHomeReplica({ images = [] }: DestileriaHomeReplicaProp
           <mark>Shots</mark> informativos
         </h2>
         <div className={styles.shotGrid}>
-          {shots.map((title) => (
-            <article key={title}>
-              {poster ? <img src={poster} alt="" loading="lazy" /> : <span className={styles.cardFallback}>Prensa</span>}
+          {shots.map((shot) => (
+            <article key={shot.title}>
+              <img src={shot.image} alt="" loading="lazy" />
               <small>Prensa</small>
-              <h3>{title}</h3>
+              <h3>{shot.title}</h3>
             </article>
           ))}
         </div>
