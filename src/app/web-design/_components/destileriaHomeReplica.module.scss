@@ -266,20 +266,59 @@
 }
 
 .logoStrip {
-    display: grid;
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-    gap: clamp(18px, 3vw, 42px);
+    position: relative;
+    display: flex;
+    min-height: 96px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logoStrip::before,
+.logoStrip::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: clamp(48px, 8vw, 140px);
+    pointer-events: none;
+    content: "";
+}
+
+.logoStrip::before {
+    left: 0;
+    background: linear-gradient(90deg, #020202 0%, transparent 100%);
+}
+
+.logoStrip::after {
+    right: 0;
+    background: linear-gradient(270deg, #020202 0%, transparent 100%);
+}
+
+.logoMarquee {
+    display: flex;
+    width: max-content;
+    animation: logoMarquee 32s linear infinite;
+}
+
+.logoStrip:hover .logoMarquee {
+    animation-play-state: paused;
+}
+
+.logoGroup {
+    display: flex;
+    flex: 0 0 auto;
+    gap: clamp(34px, 5vw, 74px);
     align-items: center;
     min-height: 96px;
-    padding: 0 clamp(24px, 4vw, 56px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 clamp(18px, 3vw, 42px);
 }
 
 .clientLogo {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    min-width: 0;
+    min-width: clamp(112px, 9vw, 158px);
     height: 46px;
 }
 
@@ -631,6 +670,15 @@
     }
 }
 
+@keyframes logoMarquee {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 900px) {
     .header,
     .featuredSlide,
@@ -646,8 +694,7 @@
         padding: 22px 24px;
     }
 
-    .header nav,
-    .logoStrip {
+    .header nav {
         overflow-x: auto;
     }
 
@@ -675,12 +722,12 @@
         animation: none;
     }
 
-    .logoStrip {
-        display: flex;
+    .logoStrip,
+    .logoGroup {
         min-height: 74px;
     }
 
-    .logoStrip span {
+    .clientLogo {
         min-width: 120px;
     }
 
