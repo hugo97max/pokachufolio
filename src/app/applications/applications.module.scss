@@ -1,0 +1,72 @@
+.hero {
+    border-bottom: 1px solid var(--neutral-alpha-medium);
+}
+
+.emptyState {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+    gap: var(--static-space-32);
+    align-items: center;
+    padding: clamp(28px, 5vw, 56px);
+    margin-bottom: var(--static-space-64);
+    overflow: hidden;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--brand-background-strong) 18%, transparent), transparent 46%),
+        var(--surface-background);
+}
+
+.deviceMockup {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%, 220px);
+    aspect-ratio: 0.68;
+    justify-self: center;
+    border: 1px solid var(--neutral-alpha-medium);
+    border-radius: 28px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 38%),
+        var(--page-background);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.deviceMockup::before {
+    position: absolute;
+    top: 14px;
+    width: 64px;
+    height: 5px;
+    border-radius: 99px;
+    background: var(--neutral-alpha-medium);
+    content: "";
+}
+
+.deviceMockup span {
+    position: absolute;
+    inset: 42px 18px 22px;
+    border: 1px solid var(--neutral-alpha-weak);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        color-mix(in srgb, var(--brand-background-medium) 26%, transparent);
+}
+
+.deviceMockup strong {
+    position: relative;
+    z-index: 1;
+    color: var(--neutral-on-background-strong);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+@media (max-width: 720px) {
+    .emptyState {
+        grid-template-columns: 1fr;
+        padding: var(--static-space-24);
+    }
+
+    .deviceMockup {
+        max-width: 170px;
+    }
+}

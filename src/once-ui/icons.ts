@@ -32,6 +32,7 @@ import {
   PiBookBookmarkDuotone,
   PiImageDuotone,
   PiBriefcaseDuotone,
+  PiDeviceMobileDuotone,
   PiMonitorDuotone,
 } from "react-icons/pi";
 
@@ -57,6 +58,7 @@ export const iconLibrary: Record<string, IconType> = {
   grid: PiGridFourDuotone,
   briefcase: PiBriefcaseDuotone,
   monitor: PiMonitorDuotone,
+  app: PiDeviceMobileDuotone,
   book: PiBookBookmarkDuotone,
   close: HiMiniXMark,
   openLink: HiOutlineLink,
