@@ -1,5 +1,7 @@
 import styles from "./destileriaHomeReplica.module.scss";
 
+const destileriaImage = (file: string) => `/images/web-design/destileria/${file}`;
+
 const clientLogos = [
   {
     name: "Delirio",
@@ -43,32 +45,32 @@ const works = [
   {
     client: "Alprecio",
     title: "No le regales cualquier huev***",
-    image: "",
+    image: destileriaImage("work-no-le-regales.webp"),
   },
   {
     client: "Maxell",
     title: "Distracted",
-    image: "",
+    image: destileriaImage("work-distracted.webp"),
   },
   {
     client: "Motorscorp",
     title: "La Mama de las Chaquetas",
-    image: "",
+    image: destileriaImage("work-mama-chaquetas.webp"),
   },
   {
     client: "Maxell",
     title: "Underwater",
-    image: "",
+    image: destileriaImage("work-underwater.webp"),
   },
   {
     client: "LaGanga",
     title: "Manual de Equidad en el Hogar #8M",
-    image: "",
+    image: destileriaImage("work-manual-equidad.webp"),
   },
   {
     client: "LaGanga",
     title: "Descuento de por vida",
-    image: "",
+    image: destileriaImage("work-descuento-vida.webp"),
   },
 ];
 
@@ -120,49 +122,49 @@ function DestileriaLogo() {
 }
 
 export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeReplicaProps) {
-  const fallbackImage = _images[0] ?? "";
+  const fallbackImage = works[0]?.image || _images[0] || "";
 
   const featuredSlides = [
     {
       client: "Motorscorp",
       title: "La Mama de las Chaquetas",
       count: "1 of 6",
-      image: fallbackImage,
+      image: works[2]?.image || fallbackImage,
       eyebrow: "Brand experience",
     },
     {
       client: "Al Precio",
       title: "No le regales cualquier huev***",
       count: "2 of 6",
-      image: fallbackImage,
+      image: works[0]?.image || fallbackImage,
       eyebrow: "Retail campaign",
     },
     {
       client: "Maxell",
       title: "Distracted",
       count: "3 of 6",
-      image: fallbackImage,
+      image: works[1]?.image || fallbackImage,
       eyebrow: "Animated key visual",
     },
     {
       client: "Maxell",
       title: "Underwater",
       count: "4 of 6",
-      image: fallbackImage,
+      image: works[3]?.image || fallbackImage,
       eyebrow: "Motion feature",
     },
     {
       client: "La Ganga",
       title: "Manual de Equidad en el Hogar #8M",
       count: "5 of 6",
-      image: fallbackImage,
+      image: works[4]?.image || fallbackImage,
       eyebrow: "Content system",
     },
     {
       client: "La Ganga",
       title: "Descuento de por vida",
       count: "6 of 6",
-      image: fallbackImage,
+      image: works[5]?.image || fallbackImage,
       eyebrow: "Promotion",
     },
   ];
@@ -185,7 +187,7 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
       <section className={styles.featured} aria-label="Featured carousel">
         <div className={styles.heroAmbient} aria-hidden="true">
           {fallbackImage && <img src={fallbackImage} alt="" />}
-          {fallbackImage && <img src={fallbackImage} alt="" />}
+          {works[1]?.image && <img src={works[1].image} alt="" />}
         </div>
         <div className={styles.featuredTrack}>
           {featuredSlides.map((slide) => (
