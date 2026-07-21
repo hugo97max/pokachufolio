@@ -195,7 +195,7 @@
 .logoStrip {
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
-    gap: 18px;
+    gap: clamp(18px, 3vw, 42px);
     align-items: center;
     min-height: 96px;
     padding: 0 clamp(24px, 4vw, 56px);
@@ -203,43 +203,19 @@
 }
 
 .clientLogo {
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 0;
-    place-items: center;
+    height: 46px;
 }
 
-.clientLogo svg {
-    width: min(100%, 132px);
-    height: 42px;
-    overflow: visible;
-    fill: none;
-    stroke: var(--white);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3.4;
-}
-
-.clientLogo text {
-    fill: var(--white);
-    stroke: none;
-    font-family: var(--display);
-    font-size: 23px;
-    letter-spacing: 0;
-    text-transform: uppercase;
-}
-
-.clientLogo:first-child text,
-.clientLogo:nth-child(5) text {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: none;
-}
-
-.logoSubline {
-    font-family: var(--body) !important;
-    font-size: 5px !important;
-    letter-spacing: 1px !important;
+.clientLogo img {
+    display: block;
+    width: 100%;
+    max-width: 132px;
+    max-height: 42px;
+    object-fit: contain;
 }
 
 .intro,
