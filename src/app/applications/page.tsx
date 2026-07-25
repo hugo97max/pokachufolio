@@ -13,9 +13,9 @@ const applicationItems = [
     title: "Cazadores de pulgadas",
     eyebrow: "Dashboard / resultados del Mundial",
     description:
-      "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. Quedara publicada como vista de resultados cuando la data final este disponible fuera del acceso privado de Vercel.",
-    status: "Publicacion pendiente",
-    href: "",
+      "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. La vista publica muestra resultados, filtros y exportacion sin carga, IA, edicion ni borrado activo.",
+    status: "Sitio publico",
+    href: "https://base-de-datos-capturas-mundial-git-main-hugo97maxs-projects.vercel.app",
     marker: "CM",
   },
   {
