@@ -15,7 +15,7 @@ const applicationItems = [
     description:
       "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. La vista publica muestra resultados, filtros y exportacion sin carga, IA, edicion ni borrado activo.",
     status: "Sitio publico",
-    href: "https://base-de-datos-capturas-mundial-git-main-hugo97maxs-projects.vercel.app",
+    href: "https://base-de-datos-capturas-mundial.vercel.app",
     marker: "CM",
   },
   {
