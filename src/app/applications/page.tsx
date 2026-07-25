@@ -12,20 +12,24 @@ const applicationItems = [
   {
     title: "Cazadores de pulgadas",
     eyebrow: "Dashboard / resultados del Mundial",
+    brand: "Ferriz Ariato",
     description:
-      "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. La vista publica muestra resultados, filtros y exportacion sin carga, IA, edicion ni borrado activo.",
+      "Aplicacion creada para analizar todas las capturas de pulgadas que se subieron durante el Mundial en el evento Cazadores de pulgadas. La vista publica queda como dashboard de resultados por usuarios, paises, partidos y tamanos detectados.",
     status: "Sitio publico",
     href: "https://base-de-datos-capturas-mundial.vercel.app",
-    marker: "CM",
+    marker: "CP",
+    cover: "worldCup",
   },
   {
-    title: "ZipZopa Layout",
-    eyebrow: "Sites / prototipo visual",
+    title: "Zipsopa Layout",
+    eyebrow: "Retail / simulacion Amazon",
+    brand: "Zipsopa",
     description:
-      "Layout interactivo preparado como pieza de aplicacion visual, publicado en ChatGPT Sites para abrirse sin login externo.",
+      "Layout preparado para presentar como se veria Zipsopa dentro de una tienda tipo Amazon. El prototipo simula el area de compras y acompana el trabajo de branding desarrollado para la marca.",
     status: "Sitio publico",
     href: "https://frame-visual-board.pokachu.chatgpt.site",
-    marker: "ZZ",
+    marker: "ZS",
+    cover: "zipsopa",
   },
 ];
 
@@ -92,10 +96,30 @@ export default function Applications() {
 function ApplicationCard({ app }: { app: (typeof applicationItems)[number] }) {
   return (
     <>
-      <div className={styles.appPreview} aria-hidden="true">
-        <span className={styles.deviceFrame}>
-          <span className={styles.deviceTop} />
-          <strong>{app.marker}</strong>
+      <div className={`${styles.appPreview} ${styles[app.cover]}`} aria-hidden="true">
+        <span className={styles.coverArtwork}>
+          {app.cover === "worldCup" ? (
+            <>
+              <span className={styles.scoreboard}>
+                <small>Total capturas</small>
+                <strong>1663</strong>
+              </span>
+              <span className={styles.metricRow}>
+                <b>43"</b>
+                <b>58"</b>
+                <b>65"</b>
+              </span>
+              <span className={styles.pitchGrid} />
+            </>
+          ) : (
+            <>
+              <span className={styles.shopHeader}>amazon layout</span>
+              <span className={styles.productCan}>
+                <strong>{app.marker}</strong>
+              </span>
+              <span className={styles.buyBar}>brand shelf</span>
+            </>
+          )}
         </span>
         <span className={styles.statusPill}>{app.status}</span>
       </div>
@@ -103,6 +127,7 @@ function ApplicationCard({ app }: { app: (typeof applicationItems)[number] }) {
         <Text variant="label-default-s" onBackground="brand-weak">
           {app.eyebrow}
         </Text>
+        <span className={styles.brandTag}>Marca: {app.brand}</span>
         <Heading as="h2" variant="heading-strong-m">
           {app.title}
         </Heading>
