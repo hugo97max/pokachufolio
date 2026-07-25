@@ -11,21 +11,21 @@ const applications = {
 const applicationItems = [
   {
     title: "Cazadores de pulgadas",
-    eyebrow: "Dashboard / archivo de resultados",
+    eyebrow: "Dashboard / resultados del Mundial",
     description:
-      "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. Ahora queda en modo archivo, sin cargas, IA ni edicion activa.",
-    status: "Modo archivo",
-    href: "https://base-de-datos-capturas-mundial-git-main-hugo97maxs-projects.vercel.app",
+      "Aplicacion de consulta para revisar capturas del Mundial por pulgadas, usuarios, paises y partidos. Quedara publicada como vista de resultados cuando la data final este disponible fuera del acceso privado de Vercel.",
+    status: "Publicacion pendiente",
+    href: "",
     marker: "CM",
   },
   {
-    title: "SIPSOPA Layout",
-    eyebrow: "Framer / prototipo visual",
+    title: "ZipZopa Layout",
+    eyebrow: "Sites / prototipo visual",
     description:
-      "Layout interactivo de SIPSOPA preparado para enlazarse como caso de aplicacion cuando el URL final este disponible.",
-    status: "URL pendiente",
-    href: "",
-    marker: "SI",
+      "Layout interactivo preparado como pieza de aplicacion visual, publicado en ChatGPT Sites para abrirse sin login externo.",
+    status: "Sitio publico",
+    href: "https://frame-visual-board.pokachu.chatgpt.site",
+    marker: "ZZ",
   },
 ];
 
