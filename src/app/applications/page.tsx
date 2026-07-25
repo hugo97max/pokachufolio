@@ -12,7 +12,7 @@ const applicationItems = [
   {
     title: "Cazadores de pulgadas",
     eyebrow: "Dashboard / resultados del Mundial",
-    brand: "Ferriz Ariato",
+    brand: "Ferrisariato",
     description:
       "Aplicacion creada para analizar todas las capturas de pulgadas que se subieron durante el Mundial en el evento Cazadores de pulgadas. La vista publica queda como dashboard de resultados por usuarios, paises, partidos y tamanos detectados.",
     status: "Sitio publico",
@@ -21,14 +21,14 @@ const applicationItems = [
     cover: "worldCup",
   },
   {
-    title: "Zipsopa Layout",
+    title: "Sipsopa Layout",
     eyebrow: "Retail / simulacion Amazon",
-    brand: "Zipsopa",
+    brand: "Sipsopa",
     description:
-      "Layout preparado para presentar como se veria Zipsopa dentro de una tienda tipo Amazon. El prototipo simula el area de compras y acompana el trabajo de branding desarrollado para la marca.",
+      "Layout preparado para presentar como se veria Sipsopa dentro de una tienda tipo Amazon. El prototipo simula el area de compras y acompana el trabajo de branding desarrollado para la marca.",
     status: "Sitio publico",
     href: "https://frame-visual-board.pokachu.chatgpt.site",
-    marker: "ZS",
+    marker: "SI",
     cover: "zipsopa",
   },
 ];
