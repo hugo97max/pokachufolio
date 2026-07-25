@@ -158,18 +158,6 @@ const about = {
         contact: "093 910 2969",
       },
       {
-        name: "Ing. Yahaira Oviedo Becilla",
-        role: "Instituto Superior Tecnológico Babahoyo",
-        organization: "",
-        contact: "093 992 8329",
-      },
-      {
-        name: "Ing. Lenin Zapata Ponce",
-        role: "Periodismo y Diseño Web",
-        organization: "",
-        contact: "leninzapatap@gmail.com",
-      },
-      {
         name: "José Muzo",
         role: "Proyectos Freelance",
         organization: "",
@@ -197,7 +185,7 @@ const about = {
       {
         company: "Quantumbit QBIT",
         timeframe: "Jul 2024 - May 2025",
-        role: "Director Visual Senior, Diseñador web UX/UI",
+        role: "Diseñador gráfico senior, Diseñador web UX/UI",
         achievements: [
           <>
             Desarrollé identidades visuales, sistemas gráficos, key visuals y campañas para marcas como Grupo Marriott, Intaco, Chiveria, AustroRed, Proquim, Cartago, Almacopio, Albosuites, AguaBendita, Autocorner y Bristol Place, cuidando la coherencia estética y la fuerza conceptual de cada pieza.
@@ -214,7 +202,7 @@ const about = {
       {
         company: "Grupo Ronquillo Sandoya",
         timeframe: "Jul 2021 - Abr 2024",
-        role: "Director Visual, Diseñador Web, CM y Fotógrafo",
+        role: "Diseñador gráfico senior, Diseñador Web, CM y Fotógrafo",
         achievements: [
           <>
             Desarrollé campañas, contenido digital y piezas audiovisuales para redes sociales, construyendo una línea visual coherente para distintas marcas y formatos de comunicación.
@@ -228,7 +216,7 @@ const about = {
       {
         company: "IVMA Importer",
         timeframe: "Feb 2023 - Ago 2023",
-        role: "Director Visual, CM y Fotógrafo",
+        role: "Diseñador gráfico senior, CM y Fotógrafo",
         achievements: [
           <>
             Trabajé en la dirección visual de contenido digital, rediseño de marca, materiales para publicidad y redes sociales. También diseñé y mantuve una página web eCommerce, y realicé producción fotográfica y edición.
@@ -239,7 +227,7 @@ const about = {
       {
         company: "FCS Ecuador",
         timeframe: "Jul 2021 - Feb 2024",
-        role: "Director Visual y CM",
+        role: "Diseñador gráfico senior y CM",
         achievements: [
           <>
             Desarrollé branding, páginas web e identidad visual para Kerd, Etika y Regalart, subempresas de FCS Ecuador. Creé materiales para redes sociales, estrategias de marca y procesos de rebranding, fortaleciendo la comunicación visual de las marcas en entornos digitales y físicos.
