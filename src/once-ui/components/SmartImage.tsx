@@ -129,6 +129,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
             loop
             muted
             playsInline
+            preload="metadata"
             style={{
               width: "100%",
               height: "100%",
@@ -141,6 +142,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
             width="100%"
             height="100%"
             src={getYouTubeEmbedUrl(src)}
+            loading="lazy"
             frameBorder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -196,6 +198,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 style={{
                   width: "90vw",
                   height: "auto",
