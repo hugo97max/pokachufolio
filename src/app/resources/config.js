@@ -12,12 +12,6 @@ const routes = {
   "/gallery": false,
 };
 
-// Enable password protection on selected routes
-// Set password in the .env file, refer to .env.example
-const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": false,
-};
-
 const style = {
   theme: "dark", // dark | light
   neutral: "slate", // sand | gray | slate
@@ -105,4 +99,4 @@ const mailchimp = {
   },
 };
 
-export { routes, protectedRoutes, effects, style, mailchimp, baseURL };
+export { routes, effects, style, mailchimp, baseURL };
