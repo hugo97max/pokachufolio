@@ -39,6 +39,7 @@
 }
 
 .coverWrap {
+    position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -46,8 +47,6 @@
 }
 
 .cover {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     transition: transform 420ms ease;
 }
@@ -184,11 +183,16 @@
     background: var(--surface-background);
 }
 
-.detailCover {
+.detailCoverFrame {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    overflow: hidden;
     background: var(--neutral-alpha-weak);
+}
+
+.detailCover {
+    object-fit: cover;
 }
 
 .detailMeta {
