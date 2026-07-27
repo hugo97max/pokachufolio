@@ -88,7 +88,7 @@ const about = {
         organization: "WINA Festival",
         timeframe: "6 premios",
         mark: "WINA",
-        icon: "/images/awards/wina.png",
+        icon: "",
         result: "Winner",
         count: "6 premios",
         description: (
@@ -102,7 +102,7 @@ const about = {
         organization: "FePI",
         timeframe: "5 premios",
         mark: "FePI",
-        icon: "/images/awards/fepi.png",
+        icon: "",
         result: "Winner",
         count: "5 premios",
         description: (
@@ -116,7 +116,7 @@ const about = {
         organization: "Festival Internacional El Ojo de Iberoamérica",
         timeframe: "1 shortlist",
         mark: "El Ojo",
-        icon: "/images/awards/el-ojo.png",
+        icon: "",
         result: "Shortlist",
         count: "1 shortlist",
         description: (
@@ -129,8 +129,8 @@ const about = {
         title: "Lürzer’s Archive",
         organization: "Lürzer’s Archive",
         timeframe: "Mención editorial",
-        mark: "Lürzer",
-        icon: "/images/awards/luerzers.png",
+        mark: "L[A]",
+        icon: "",
         result: "Featured",
         count: "Mención",
         description: (
