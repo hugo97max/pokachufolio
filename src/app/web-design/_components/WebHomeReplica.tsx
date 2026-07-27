@@ -66,7 +66,7 @@ export function WebHomeReplica({ project, images = [] }: WebHomeReplicaProps) {
           </div>
 
           <div className={styles.media}>
-            {heroImage ? <img src={heroImage} alt="" /> : <span>{project.title}</span>}
+            {heroImage ? <img src={heroImage} alt="" loading="eager" decoding="async" /> : <span>{project.title}</span>}
           </div>
         </section>
 
