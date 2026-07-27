@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person, webDesign } from "@/app/resources/content";
@@ -63,7 +64,15 @@ export default function WebDesign() {
                   <span className={styles.dot} />
                   <span className={styles.domain}>{project.domain}</span>
                 </Flex>
-                {images[0] && <img src={images[0]} alt="" className={styles.previewImage} loading="lazy" />}
+                {images[0] && (
+                  <Image
+                    src={images[0]}
+                    alt=""
+                    className={styles.previewImage}
+                    fill
+                    sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                )}
                 <div className={styles.browserHero}>
                   <span className={styles.kicker}>{project.sector}</span>
                   <strong>{project.title}</strong>
