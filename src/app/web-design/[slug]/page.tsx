@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
@@ -120,7 +121,7 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
         <div className={styles.siteReplica}>
           <header className={styles.siteHeader}>
             <div className={styles.brand}>
-              {logo ? <img src={logo} alt="" /> : <strong>{project.title}</strong>}
+              {logo ? <img src={logo} alt="" loading="lazy" decoding="async" /> : <strong>{project.title}</strong>}
             </div>
             <nav aria-label={`Navegacion reconstruida de ${project.title}`}>
               {(project.nav ?? []).slice(0, 4).map((item) => (
@@ -146,7 +147,18 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
               </Flex>
             </Column>
             <div className={styles.heroMedia}>
-              {heroImage ? <img src={heroImage} alt="" /> : <span className={styles.mediaFallback}>{project.title}</span>}
+              {heroImage ? (
+                <Image
+                  src={heroImage}
+                  alt=""
+                  fill
+                  sizes="(max-width: 960px) 100vw, 50vw"
+                  className={styles.mediaImage}
+                  priority
+                />
+              ) : (
+                <span className={styles.mediaFallback}>{project.title}</span>
+              )}
             </div>
           </section>
 
@@ -166,7 +178,14 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
           {gallery.length > 0 && (
             <section className={styles.gallery} aria-label={`Assets recuperados de ${project.title}`}>
               {gallery.map((image) => (
-                <img key={image} src={image} alt="" loading="lazy" />
+                <Image
+                  key={image}
+                  src={image}
+                  alt=""
+                  width={640}
+                  height={420}
+                  sizes="(max-width: 720px) 100vw, 25vw"
+                />
               ))}
             </section>
           )}
