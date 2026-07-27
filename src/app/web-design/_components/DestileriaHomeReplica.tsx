@@ -117,6 +117,7 @@ function DestileriaLogo() {
       src="/images/web-design/destileria/logo.svg"
       alt="Destileria"
       loading="eager"
+      decoding="async"
     />
   );
 }
@@ -186,8 +187,8 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
 
       <section className={styles.featured} aria-label="Featured carousel">
         <div className={styles.heroAmbient} aria-hidden="true">
-          {fallbackImage && <img src={fallbackImage} alt="" />}
-          {works[1]?.image && <img src={works[1].image} alt="" />}
+          {fallbackImage && <img src={fallbackImage} alt="" loading="eager" decoding="async" />}
+          {works[1]?.image && <img src={works[1].image} alt="" loading="lazy" decoding="async" />}
         </div>
         <div className={styles.featuredTrack}>
           {featuredSlides.map((slide) => (
@@ -199,7 +200,12 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
               </div>
               <div className={styles.videoFrame}>
                 {slide.image ? (
-                  <img src={slide.image} alt="" loading={slide.count === "1 of 6" ? "eager" : "lazy"} />
+                  <img
+                    src={slide.image}
+                    alt=""
+                    loading={slide.count === "1 of 6" ? "eager" : "lazy"}
+                    decoding="async"
+                  />
                 ) : (
                   <span className={styles.videoPlaceholder}>{slide.title}</span>
                 )}
@@ -216,7 +222,7 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
             <div className={styles.logoGroup} key={`logos-${groupIndex}`} aria-hidden={groupIndex > 0 ? "true" : undefined}>
               {group.map((brand) => (
                 <span key={`${brand.name}-${groupIndex}`} className={styles.clientLogo}>
-                  <img src={brand.src} alt={`Logo blanco de la marca ${brand.name}`} loading="lazy" />
+                  <img src={brand.src} alt={`Logo blanco de la marca ${brand.name}`} loading="lazy" decoding="async" />
                 </span>
               ))}
             </div>
@@ -247,7 +253,7 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
           {works.map((work) => (
             <article key={work.title} className={styles.workCard}>
               {work.image || fallbackImage ? (
-                <img src={work.image || fallbackImage} alt="" loading="lazy" />
+                <img src={work.image || fallbackImage} alt="" loading="lazy" decoding="async" />
               ) : (
                 <span className={styles.cardFallback}>{work.title}</span>
               )}
@@ -273,7 +279,7 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
           {academy.map((course) => (
             <article key={course.title}>
               {course.image || fallbackImage ? (
-                <img src={course.image || fallbackImage} alt="" loading="lazy" />
+                <img src={course.image || fallbackImage} alt="" loading="lazy" decoding="async" />
               ) : (
                 <span className={styles.cardFallback}>Intensivos</span>
               )}
@@ -293,7 +299,7 @@ export function DestileriaHomeReplica({ images: _images = [] }: DestileriaHomeRe
           {shots.map((shot) => (
             <article key={shot.title}>
               {shot.image || fallbackImage ? (
-                <img src={shot.image || fallbackImage} alt="" loading="lazy" />
+                <img src={shot.image || fallbackImage} alt="" loading="lazy" decoding="async" />
               ) : (
                 <span className={styles.cardFallback}>Prensa</span>
               )}
