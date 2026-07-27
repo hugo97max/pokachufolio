@@ -17,21 +17,18 @@
 }
 
 .awardBadge {
-    min-height: 68px;
-    padding: var(--static-space-12);
+    min-height: 56px;
+    padding: var(--static-space-8) 0;
     border: 1px solid var(--neutral-alpha-medium);
     border-radius: 8px;
-    background: var(--surface-background);
+    background: transparent;
 }
 
 .awardMark {
-    flex: 0 0 84px;
-    width: 84px;
-    height: 52px;
-    border: 1px solid var(--brand-alpha-medium);
-    border-radius: 6px;
+    flex: 0 0 72px;
+    width: 72px;
+    height: 46px;
     color: var(--brand-on-background-strong);
-    background: var(--brand-alpha-weak);
     font-size: 0.72rem;
     font-weight: 800;
     line-height: 1;
@@ -40,8 +37,10 @@
 
     img {
         display: block;
-        max-width: 72px;
-        max-height: 38px;
+        max-width: 70px;
+        max-height: 42px;
+        filter: grayscale(1) brightness(0) invert(1) contrast(1.1);
+        mix-blend-mode: screen;
         object-fit: contain;
     }
 }
