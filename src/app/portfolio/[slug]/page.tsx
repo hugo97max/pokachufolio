@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Button, Column, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
@@ -105,7 +106,7 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
                 return (
                   <div key={name} className={styles.ownerItem}>
                     <span className={styles.ownerAvatar} title={name}>
-                      {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
+                      {avatar ? <img src={avatar} alt="" loading="lazy" decoding="async" /> : getInitials(name)}
                     </span>
                     <span className={styles.ownerText}>
                       <span className={styles.ownerName}>{name}</span>
@@ -121,7 +122,16 @@ export default function PortfolioProject({ params }: PortfolioProjectParams) {
 
       <Column className={styles.detailHero}>
         {project.cover ? (
-          <img src={project.cover} alt={`Portada del proyecto ${project.title}`} className={styles.detailCover} />
+          <div className={styles.detailCoverFrame}>
+            <Image
+              src={project.cover}
+              alt={`Portada del proyecto ${project.title}`}
+              className={styles.detailCover}
+              fill
+              sizes="(max-width: 960px) 100vw, 960px"
+              priority
+            />
+          </div>
         ) : (
           <Column horizontal="center" vertical="center" gap="8" className={styles.detailCoverFallback}>
             <Text variant="label-default-s" onBackground="neutral-weak">
