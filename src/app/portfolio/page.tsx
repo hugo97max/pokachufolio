@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Column, Flex, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
@@ -77,11 +78,13 @@ export default function Portfolio() {
             >
               <Flex className={styles.coverWrap}>
                 {project.cover ? (
-                  <img
+                  <Image
                     src={project.cover}
                     alt={`Portada del proyecto ${project.title}`}
                     className={styles.cover}
-                    loading={index < 3 ? "eager" : "lazy"}
+                    fill
+                    sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={index < 3}
                   />
                 ) : (
                   <Column horizontal="center" vertical="center" gap="8" className={styles.coverFallback}>
@@ -119,7 +122,7 @@ export default function Portfolio() {
                         return (
                           <div key={name} className={styles.ownerItem}>
                             <span className={styles.ownerAvatar} title={name}>
-                              {avatar ? <img src={avatar} alt="" /> : getInitials(name)}
+                              {avatar ? <img src={avatar} alt="" loading="lazy" decoding="async" /> : getInitials(name)}
                             </span>
                             <span className={styles.ownerText}>
                               <span className={styles.ownerName}>{name}</span>
