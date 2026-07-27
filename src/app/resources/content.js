@@ -88,7 +88,7 @@ const about = {
         organization: "WINA Festival",
         timeframe: "6 premios",
         mark: "WINA",
-        icon: "",
+        icon: "/images/awards/wina.svg",
         result: "Winner",
         count: "6 premios",
         description: (
@@ -102,7 +102,7 @@ const about = {
         organization: "FePI",
         timeframe: "5 premios",
         mark: "FePI",
-        icon: "",
+        icon: "/images/awards/fepi.svg",
         result: "Winner",
         count: "5 premios",
         description: (
@@ -130,7 +130,7 @@ const about = {
         organization: "Lürzer’s Archive",
         timeframe: "Mención editorial",
         mark: "L[A]",
-        icon: "",
+        icon: "/images/awards/luerzers-archive.svg",
         result: "Featured",
         count: "Mención",
         description: (
