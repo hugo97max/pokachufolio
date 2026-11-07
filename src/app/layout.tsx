@@ -140,9 +140,14 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               opacity: effects.lines.opacity as any,
             }}
           />
+          <a className="skip-link" href="#contenido">
+            Saltar al contenido
+          </a>
           <Flex fillWidth minHeight="16"></Flex>
           <Header />
           <Flex
+            as="main"
+            id="contenido"
             position="relative"
             zIndex={0}
             fillWidth

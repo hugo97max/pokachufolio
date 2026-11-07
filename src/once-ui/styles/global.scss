@@ -67,3 +67,20 @@ a:not(.button) {
 ::-webkit-scrollbar-corner {
     background-color: var(--static-transparent);
 }
+.skip-link {
+  position: fixed;
+  top: var(--static-space-8);
+  left: var(--static-space-8);
+  z-index: 100;
+  padding: var(--static-space-8) var(--static-space-16);
+  border-radius: 8px;
+  background: var(--page-background);
+  color: var(--neutral-on-background-strong);
+  border: 1px solid var(--brand-alpha-strong);
+  transform: translateY(-200%);
+  transition: transform 150ms ease;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}

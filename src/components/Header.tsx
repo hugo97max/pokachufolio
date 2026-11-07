@@ -41,9 +41,9 @@ export const Header = () => {
             padding="4"
             horizontal="center"
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s">
+            <Flex as="nav" aria-label="Principal" gap="4" vertical="center" textVariant="body-default-s">
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/" aria-label="Inicio" aria-current={pathname === "/" ? "page" : undefined} selected={pathname === "/"} />
               )}
               <Line vert maxHeight="24" />
               {routes["/about"] && (
@@ -52,6 +52,8 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="person"
                     href="/about"
+                    aria-label="Conóceme"
+                    aria-current={pathname === "/about" ? "page" : undefined}
                     label={about.label}
                     selected={pathname === "/about"}
                   />
@@ -59,6 +61,8 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="person"
                     href="/about"
+                    aria-label="Conóceme"
+                    aria-current={pathname === "/about" ? "page" : undefined}
                     selected={pathname === "/about"}
                   />
                 </>
@@ -69,6 +73,8 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="briefcase"
                     href="/portfolio"
+                    aria-label="Portafolio"
+                    aria-current={pathname.startsWith("/portfolio") ? "page" : undefined}
                     label="Portafolio"
                     selected={pathname.startsWith("/portfolio")}
                   />
@@ -76,6 +82,8 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="briefcase"
                     href="/portfolio"
+                    aria-label="Portafolio"
+                    aria-current={pathname.startsWith("/portfolio") ? "page" : undefined}
                     selected={pathname.startsWith("/portfolio")}
                   />
                 </>
@@ -86,6 +94,8 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="book"
                     href="/work"
+                    aria-label="Social Media"
+                    aria-current={pathname.startsWith("/work") ? "page" : undefined}
                     label={work.label}
                     selected={pathname.startsWith("/work")}
                   />
@@ -93,6 +103,8 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="book"
                     href="/work"
+                    aria-label="Social Media"
+                    aria-current={pathname.startsWith("/work") ? "page" : undefined}
                     selected={pathname.startsWith("/work")}
                   />
                 </>
@@ -103,6 +115,8 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="monitor"
                     href="/web-design"
+                    aria-label="Diseños Web"
+                    aria-current={pathname.startsWith("/web-design") ? "page" : undefined}
                     label={webDesign.label}
                     selected={pathname.startsWith("/web-design")}
                   />
@@ -110,6 +124,8 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="monitor"
                     href="/web-design"
+                    aria-label="Diseños Web"
+                    aria-current={pathname.startsWith("/web-design") ? "page" : undefined}
                     selected={pathname.startsWith("/web-design")}
                   />
                 </>
@@ -120,6 +136,8 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="app"
                     href="/applications"
+                    aria-label="Aplicaciones"
+                    aria-current={pathname.startsWith("/applications") ? "page" : undefined}
                     label="Aplicaciones"
                     selected={pathname.startsWith("/applications")}
                   />
@@ -127,6 +145,8 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="app"
                     href="/applications"
+                    aria-label="Aplicaciones"
+                    aria-current={pathname.startsWith("/applications") ? "page" : undefined}
                     selected={pathname.startsWith("/applications")}
                   />
                 </>

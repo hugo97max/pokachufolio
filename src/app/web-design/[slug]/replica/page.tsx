@@ -57,7 +57,7 @@ export default function WebDesignReplica({ params }: WebDesignReplicaParams) {
   const images = webDesignAssets[project.slug]?.images ?? [];
 
   return (
-    <main className={styles.page} style={{ "--accent": project.accent } as CSSProperties}>
+    <div className={styles.page} style={{ "--accent": project.accent } as CSSProperties}>
       <section className={styles.toolbar}>
         <Column gap="8">
           <Button href={`/web-design/${project.slug}`} variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
@@ -81,6 +81,6 @@ export default function WebDesignReplica({ params }: WebDesignReplicaParams) {
       </section>
 
       <WebHomeReplica project={project} images={images} />
-    </main>
+    </div>
   );
 }

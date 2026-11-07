@@ -306,9 +306,9 @@ export default function About() {
               <Heading as="h2" id={about.awards.title} variant="display-strong-s" marginBottom="m">
                 {about.awards.title}
               </Heading>
-              <div className={styles.awardsGrid} role="list">
+              <ul className={styles.awardsGrid}>
                 {about.awards.items.map((award) => (
-                  <article key={award.title} id={award.title} className={styles.awardCard} role="listitem">
+                  <li key={award.title} id={award.title} className={styles.awardCard}>
                     <div className={styles.awardLogo}>
                       {award.icon ? (
                         <img src={award.icon} alt={`Logo de ${award.organization}`} loading="lazy" decoding="async" />
@@ -326,9 +326,9 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="neutral-weak">
                       {award.description}
                     </Text>
-                  </article>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <Column marginBottom="40" />
             </>
           )}

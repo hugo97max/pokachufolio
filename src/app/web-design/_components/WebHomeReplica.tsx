@@ -53,7 +53,7 @@ export function WebHomeReplica({ project, images = [] }: WebHomeReplicaProps) {
         <span className={styles.headerAction}>{project.cta}</span>
       </header>
 
-      <main className={styles.home}>
+      <div className={styles.home}>
         <section className={styles.hero}>
           <div className={styles.copy}>
             <p>{project.sector}</p>
@@ -84,7 +84,7 @@ export function WebHomeReplica({ project, images = [] }: WebHomeReplicaProps) {
             <strong>Base preparada para copiar el home exacto desde captura o PDF.</strong>
           </article>
         </section>
-      </main>
+      </div>
     </article>
   );
 }

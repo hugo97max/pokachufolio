@@ -23,3 +23,9 @@
         bottom: 0;
     }
 }
+
+.position a:focus-visible {
+    outline: 2px solid var(--brand-solid-strong);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
