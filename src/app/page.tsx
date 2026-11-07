@@ -1,5 +1,5 @@
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Row } from "@/once-ui/components";
+import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
 
 import { baseURL } from "@/app/resources";
 import { home, about, person } from "@/app/resources/content";
@@ -88,8 +88,18 @@ export default function Home() {
           
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1]} />
+      <RevealFx translateY="16" delay={0.6} fillWidth>
+        <Column fillWidth gap="24" paddingX="l" marginBottom="40">
+          <Row fillWidth horizontal="space-between" vertical="end" gap="16" wrap>
+            <Heading as="h2" variant="display-strong-xs">
+              Portafolio
+            </Heading>
+            <Button href="/portfolio" variant="tertiary" size="m" arrowIcon>
+              Ver todo el portafolio
+            </Button>
+          </Row>
+          <PortfolioGrid limit={6} showOwners={false} label="Proyectos destacados del portafolio" />
+        </Column>
       </RevealFx>
     </Column>
   );

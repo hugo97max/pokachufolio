@@ -12,11 +12,15 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 86400,
+    minimumCacheTTL: 2592000,
     remotePatterns: [
       {
         protocol: "https",
         hostname: "mir-s3-cdn-cf.behance.net",
+      },
+      {
+        protocol: "https",
+        hostname: "mir-cdn.behance.net",
       },
     ],
   },

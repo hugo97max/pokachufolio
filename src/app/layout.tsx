@@ -62,6 +62,7 @@ const code = Source_Code_Pro({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
+  preload: false, // solo se usa en bloques de código
 });
 
 interface RootLayoutProps {

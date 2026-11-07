@@ -88,9 +88,9 @@ export default function About() {
             "@type": "Person",
             name: person.name,
             jobTitle: person.role,
-            description: about.intro.description,
+            description: about.intro.summary,
             url: `https://${baseURL}/about`,
-            image: `${baseURL}/images/${person.avatar}`,
+            image: `https://${baseURL}${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:"))
               .map((item) => item.link),
@@ -137,38 +137,6 @@ export default function About() {
                   </Tag>
                 ))}
               </Flex>
-            )}
-            {about.awards.display && (
-              <Column className={styles.awardStack} fillWidth gap="12" paddingTop="12">
-                <Text id={about.awards.title} variant="heading-strong-s">
-                  {about.awards.title}
-                </Text>
-                <Column fillWidth gap="8">
-                  {about.awards.items.map((award) => (
-                    <Flex
-                      key={award.title}
-                      className={styles.awardBadge}
-                      fillWidth
-                      gap="12"
-                      vertical="center"
-                    >
-                      <Flex className={styles.awardMark} horizontal="center" vertical="center">
-                        {award.icon ? (
-                          <img src={award.icon} alt={`${award.mark} logo`} loading="lazy" decoding="async" />
-                        ) : (
-                          award.mark
-                        )}
-                      </Flex>
-                      <Column gap="2">
-                        <Text variant="label-strong-s" onBackground="brand-weak">
-                          {award.result}
-                        </Text>
-                        <Text variant="body-strong-s">{award.count}</Text>
-                      </Column>
-                    </Flex>
-                  ))}
-                </Column>
-              </Column>
             )}
           </Column>
         )}
@@ -333,6 +301,38 @@ export default function About() {
             </>
           )}
 
+          {about.awards.display && (
+            <>
+              <Heading as="h2" id={about.awards.title} variant="display-strong-s" marginBottom="m">
+                {about.awards.title}
+              </Heading>
+              <div className={styles.awardsGrid} role="list">
+                {about.awards.items.map((award) => (
+                  <article key={award.title} id={award.title} className={styles.awardCard} role="listitem">
+                    <div className={styles.awardLogo}>
+                      {award.icon ? (
+                        <img src={award.icon} alt={`Logo de ${award.organization}`} loading="lazy" decoding="async" />
+                      ) : (
+                        <span className={styles.awardWordmark}>{award.mark}</span>
+                      )}
+                    </div>
+                    <Column gap="4">
+                      <Text variant="label-strong-s" onBackground="brand-weak">
+                        {award.result}
+                      </Text>
+                      <Text variant="heading-strong-l">{award.count}</Text>
+                    </Column>
+                    <Text variant="body-strong-s">{award.title}</Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {award.description}
+                    </Text>
+                  </article>
+                ))}
+              </div>
+              <Column marginBottom="40" />
+            </>
+          )}
+
           {about.technical.display && (
             <>
               <Heading
@@ -395,7 +395,6 @@ export default function About() {
                     </Text>
                     <Text variant="body-default-s" onBackground="brand-weak">
                       {reference.role}
-                      {reference.organization && ` | ${reference.organization}`}
                     </Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {reference.contact}

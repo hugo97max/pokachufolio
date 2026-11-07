@@ -8,7 +8,7 @@ const person = {
   },
   role: "Director de Arte | UX/UI",
   avatar: "/images/avatar.webp",
-  location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Ecuador/Guayaquil",
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -62,6 +62,9 @@ const about = {
   intro: {
     display: true,
     title: "Introduction",
+    // Texto plano para metadatos y JSON-LD (el JSX de abajo es solo para mostrar en pantalla).
+    summary:
+      "Director de arte con experiencia en campañas, branding, packaging, identidad corporativa, marketing digital y diseño web.",
     description: (
       <>
         Soy director de arte con experiencia en campañas, branding, packaging, identidad corporativa, marketing digital y diseño web. Me especializo en transformar ideas en sistemas visuales claros: desde la conceptualización y el desarrollo de key visuals hasta la dirección estética de piezas para marcas, productos y comunicación.
@@ -137,19 +140,16 @@ const about = {
       {
         name: "César Sepúlveda",
         role: "Director creativo",
-        organization: "Destilería",
         contact: "099 488 6685",
       },
       {
         name: "Ing. Nicolás Franco",
         role: "Ejecutivo de Cuentas",
-        organization: "QBIT",
         contact: "093 910 2969",
       },
       {
         name: "José Muzo",
         role: "Proyectos Freelance",
-        organization: "",
         contact: "099 677 9474",
       },
     ],

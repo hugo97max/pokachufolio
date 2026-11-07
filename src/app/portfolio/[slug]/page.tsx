@@ -4,7 +4,7 @@ import { Button, Column, Heading, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { portfolioProjects } from "@/app/resources/portfolio";
-import styles from "../portfolio.module.scss";
+import styles from "@/components/portfolio/portfolio.module.scss";
 
 interface PortfolioProjectParams {
   params: {
