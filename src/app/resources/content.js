@@ -159,8 +159,19 @@ const about = {
     title: "Experiencia laboral",
     experiences: [
       {
+        company: "Uppley Digital",
+        timeframe: "Ago 2026 - Actualidad",
+        role: "Director de Arte, Diseñador Gráfico",
+        achievements: [
+          <>
+            Lidero la dirección de arte y el diseño gráfico de campañas, identidades de marca y piezas digitales, traduciendo la estrategia en conceptos visuales claros y coherentes. Desarrollo key visuals, sistemas gráficos y contenido multimedia para distintos formatos y canales.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Destileria Creativa",
-        timeframe: "May 2025 - Actualidad",
+        timeframe: "May 2025 - Ago 2026",
         role: "Director de Arte, Diseñador web UX/UI",
         achievements: [
           <>
