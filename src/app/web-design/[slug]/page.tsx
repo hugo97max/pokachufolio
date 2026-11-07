@@ -27,7 +27,7 @@ export function generateMetadata({ params }: WebDesignProjectParams) {
     return;
   }
 
-  const title = `${project.title} - Diseno Web`;
+  const title = `${project.title} - Diseño Web`;
   const description = `Reconstruccion archivada del sitio ${project.domain} dentro del portafolio web de ${person.name}.`;
 
   return {
@@ -72,7 +72,7 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
     >
       <Column maxWidth="m" gap="16">
         <Button href="/web-design" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
-          Disenos Web
+          Diseños Web
         </Button>
         <Text variant="label-default-s" onBackground="brand-weak">
           Proyecto de portafolio / reconstruccion estatica
@@ -150,7 +150,7 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
               {heroImage ? (
                 <Image
                   src={heroImage}
-                  alt=""
+                  alt={`Vista de ${project.title}`}
                   fill
                   sizes="(max-width: 960px) 100vw, 50vw"
                   className={styles.mediaImage}
@@ -181,7 +181,7 @@ export default function WebDesignProject({ params }: WebDesignProjectParams) {
                 <Image
                   key={image}
                   src={image}
-                  alt=""
+                  alt={`Recurso visual de ${project.title}`}
                   width={640}
                   height={420}
                   sizes="(max-width: 720px) 100vw, 25vw"

@@ -47,7 +47,7 @@ const home = {
 const about = {
   label: "Conóceme",
   title: "Conoce más de mi",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Conoce a ${person.name}, ${person.role}, desde Guayaquil, Ecuador`,
   tableOfContent: {
     display: true,
     subItems: false,

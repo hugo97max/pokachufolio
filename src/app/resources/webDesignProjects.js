@@ -55,8 +55,8 @@ const priorityProjects = [
     finding: "La portada responde y conserva contenido.",
     nextAction: "Mapear rutas internas y descargar assets.",
     sections: ["Servicios", "Productos", "Cobertura", "Contacto"],
-    highlight: "Presentacion clara para confianza, cercania y acceso rapido a informacion.",
-    description: "Sitio de salud y farmacia con arquitectura simple para comunicar confianza, cobertura y acceso rapido a informacion.",
+    highlight: "Presentación clara para confianza, cercanía y acceso rápido a información.",
+    description: "Sitio de salud y farmacia con arquitectura simple para comunicar confianza, cobertura y acceso rápido a información.",
   },
   {
     slug: "fcs-ecuador",

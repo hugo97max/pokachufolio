@@ -84,7 +84,7 @@ const academy = [
     image: "",
   },
   {
-    title: "Disena y escala campanas de alto rendimiento dominando Meta Business desde el primer clic.",
+    title: "Diseña y escala campañas de alto rendimiento dominando Meta Business desde el primer clic.",
     image: "",
   },
 ];

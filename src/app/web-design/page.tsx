@@ -46,7 +46,7 @@ export default function WebDesign() {
         </Text>
       </Column>
 
-      <section className={styles.grid} aria-label="Disenos web prioritarios">
+      <section className={styles.grid} aria-label="Diseños web prioritarios">
         {featuredProjects.map((project) => {
           const images = webDesignAssets[project.slug]?.images ?? [];
 

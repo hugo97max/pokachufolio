@@ -27,7 +27,7 @@ export function generateMetadata({ params }: WebDesignReplicaParams) {
   }
 
   const title = `${project.title} - Home replicado`;
-  const description = `Replica estatica del home de ${project.domain} dentro del portafolio de diseno web.`;
+  const description = `Réplica estática del home de ${project.domain} dentro del portafolio de diseño web.`;
 
   return {
     title,
