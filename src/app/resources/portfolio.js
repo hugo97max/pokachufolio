@@ -3,7 +3,7 @@ import { creditAvatarsExtra } from "./creditAvatarsExtra";
 
 const allCreditAvatars = { ...creditAvatars, ...creditAvatarsExtra };
 
-const hugoAvatar = "/images/avatar.jpg";
+const hugoAvatar = "/images/avatar.webp";
 const creditAvatarMap = {
   "César Sepúlveda": allCreditAvatars.cesar,
   "Suzanne Soria": allCreditAvatars.suzanne,

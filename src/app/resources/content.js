@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Director de Arte | UX/UI",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar.webp",
   location: "America/Guayaquil", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Español", "Ingles"], // optional: Leave the array empty if you don't want to display languages
 };
