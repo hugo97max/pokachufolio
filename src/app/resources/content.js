@@ -120,16 +120,18 @@ const about = {
       {
         title: "Lürzer’s Archive",
         organization: "Lürzer’s Archive",
-        timeframe: "Mención editorial",
+        timeframe: "Top 13 Ecuador",
         mark: "L[A]",
         icon: "/images/awards/luerzers-archive.svg",
-        result: "Featured",
-        count: "Mención",
+        result: "Ranking Ecuador · Directores de arte",
+        count: "Top 13",
         description: (
           <>
-            Mención para Sonidos del Mas Allá en Lürzer’s Archive, publicación internacional especializada en creatividad publicitaria.
+            Puesto 13 en el ranking de directores de arte de Ecuador en Lürzer’s Archive, con 1,99 puntos y 2 trabajos publicados. Incluye la mención editorial para Sonidos del Mas Allá. Ranking actualizado a noviembre de 2026.
           </>
         ),
+        link: "https://www.luerzersarchive.com/rankings/?rankings_year=all&rankings_taxonomy=c_art_director&rankings_country=ecuador",
+        linkLabel: "Ver ranking en Lürzer’s Archive",
       },
     ],
   },

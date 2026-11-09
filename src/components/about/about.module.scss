@@ -50,6 +50,19 @@
     }
 }
 
+.awardLink {
+    margin-top: auto;
+    color: var(--brand-on-background-strong);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+        color: var(--brand-on-background-medium);
+    }
+}
+
 .awardWordmark {
     color: var(--neutral-on-background-strong);
     font-size: 1.5rem;

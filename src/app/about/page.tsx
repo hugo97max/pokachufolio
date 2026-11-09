@@ -326,6 +326,18 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="neutral-weak">
                       {award.description}
                     </Text>
+                    {award.link && (
+                      <a
+                        className={styles.awardLink}
+                        href={award.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {award.linkLabel ?? "Ver más"}
+                        <span className="sr-only"> (se abre en una pestaña nueva)</span>
+                        <span aria-hidden="true"> ↗</span>
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
